@@ -1,0 +1,110 @@
+{
+  "basic_info": {
+    "name": "Austin Hunt",
+    "titles": [
+      "Digital Communications Developer",
+      "Portrait Artist",
+      "Automation Enthusiast",
+      "Full-Stack Web Developer"
+    ],
+    "social": [
+      {
+        "name": "github",
+        "url": "https://github.com/austinjhunt",
+        "class": "fab fa-github"
+      },
+      {
+        "name": "linkedin",
+        "url": "https://linkedin.com/in/huntaj",
+        "class": "fab fa-linkedin"
+      },
+      {
+        "name": "instagram",
+        "url": "https://www.instagram.com/sketchyactivity",
+        "class": "fab fa-instagram"
+      },
+      {
+        "name": "youtube",
+        "url": "https://www.youtube.com/channel/UCREiV9l1tgQpwG1xCOwo0Iw/featured",
+        "class": "fab fa-youtube"
+      }
+    ],
+    "image": "myProfile.jpg"
+  },
+
+  "skills": {
+    "icons": [
+      {
+        "name": "HTML 5",
+        "class": "devicon-html5-plain",
+        "level": "95"
+      },
+      {
+        "name": "CSS 3",
+        "class": "devicon-css3-plain",
+        "level": "95"
+      },
+      {
+        "name": "JavaScript",
+        "class": "devicon-javascript-plain",
+        "level": "70"
+      },
+      {
+        "name": "Sass",
+        "class": "devicon-sass-original",
+        "level": "75"
+      },
+      {
+        "name": "Bootstrap",
+        "class": "devicon-bootstrap-plain",
+        "level": "85"
+      },
+      {
+        "name": "React",
+        "class": "devicon-react-plain",
+        "level": "80"
+      },
+      {
+        "name": "Django",
+        "class": "devicon-django-plain",
+        "level": "90"
+      },
+      {
+        "name": "Python",
+        "class": "devicon-python-plain",
+        "level": "60"
+      },
+      {
+        "name": "Docker",
+        "class": "devicon-docker-plain",
+        "level": "60"
+      }
+    ]
+  },
+  "certifications": [
+    {
+      "abbrev": "PCAP-NP-31-02",
+      "full_name": "Certified Associate in Python Programming",
+      "date_earned": "May 2020",
+      "issued_by": "Python Institute",
+      "image": "certifications/pcap.png",
+      "link": "https://www.youracclaim.com/badges/c3e6d17f-5ad1-4c7d-b9e3-23544e121d35/linked_in_profile"
+    },
+    {
+      "abbrev": "PCEP",
+      "full_name": "Certified Entry-Level Python Programmer",
+      "date_earned": "May 2020",
+      "issued_by": "Python Institute",
+      "image": "certifications/pcep.png",
+      "link": "https://www.credly.com/badges/a919a5fa-3a2a-4885-9af0-6c2c8d9ebf8b/linked_in_profile"
+    },
+    {
+      "abbrev": "DCA",
+      "full_name": "Docker Certified Associate",
+      "date_earned": "Jan 2021",
+      "issued_by": "Mirantis",
+      "image": "certifications/docker-mirantis.png",
+      "link": "https://credentials.docker.com/f624d409-fb5f-4730-b821-a9624bee373b#gs.qmqikx"
+    }
+  ]
+}
