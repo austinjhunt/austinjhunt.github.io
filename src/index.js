@@ -1,16 +1,25 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.scss";
-import App from "./App";
-import * as serviceWorker from "./serviceWorker";
-import "bootstrap/dist/css/bootstrap.min.css";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import { HelmetProvider } from 'react-helmet-async';
+import { ThemeProvider } from './contexts/ThemeContext';
+import { LoadingProvider } from './contexts/LoadingContext';
+import { setupHotjar } from './helpers/utils';
 
-/* GLOBAL VARIABLES */
+ReactDOM.render(
+    <React.StrictMode>
+        <ThemeProvider>
+            <LoadingProvider>
+                <HelmetProvider>
+                    <App/>
+                </HelmetProvider>
+            </LoadingProvider>
+        </ThemeProvider>
+    </React.StrictMode>,
+    document.getElementById('root')
+);
 
-window.$primaryLanguage = "en";
-window.$secondaryLanguage = "pl";
-window.$primaryLanguageIconId = "primary-lang-icon";
-window.$secondaryLanguageIconId = "secondary-lang-icon";
-
-ReactDOM.render(<App />, document.getElementById("root"));
-serviceWorker.register();
+reportWebVitals();
+setupHotjar();

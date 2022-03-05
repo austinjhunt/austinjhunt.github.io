@@ -1,129 +1,420 @@
-<img width="80%" align="center" src="https://github.com/Dorota1997/react-frontend-dev-portfolio/blob/images/images/portfolio_mockup.png" alt="portfolio template mockup" /> <br/>
-<img height="350px" align="right" src="https://github.com/Dorota1997/react-frontend-dev-portfolio/blob/images/images/mobile-demo.gif" alt="portfolio mobile demo gif"/>
+<p align="center">
+  <a href="http://arifszn.github.io/ezprofile" target="_blank">
+    <img src="https://arifszn.github.io/assets/img/hosted/ezprofile/logo.png" alt="ezProfile" title="ezProfile" width="80">
+  </a>
+</p>
 
-<img align="left" src="https://github.com/leungwensen/svg-icon/blob/master/dist/svg/logos/react.svg" height="50" alt="react icon"/>
-<h2>Portfolio Template</h2>
-
-<pre>
-⭐ Easy to adapt and deploy portfolio project covering most important 
-sections(about, exp, skills, projects), inspired with solutions found 
-at GitHub. Check live preview(link below).
-</pre>
-
-<strong>:crown: advantages</strong>
-
-<img src="https://img.shields.io/badge/-multilingual-blue" alt="multilingual"/> &nbsp; <img src="https://img.shields.io/badge/-mobile friendly-blue" alt="mobile friendly"/> &nbsp; <img src="https://img.shields.io/badge/-light/dark mode-blue" alt="light/dark mode"/> &nbsp; <img src="https://img.shields.io/badge/-json fetched data-blue" alt="json fetched data"/> &nbsp; <img src="https://img.shields.io/badge/-minimalistic-blue" alt="minimalistic"/> &nbsp; <img src="https://img.shields.io/badge/-expandable-blue" alt="expandable"/>
+<h1 align="center">ezProfile</h1>
+<p align="center">A modern, responsive and customizable portfolio builder for Developers!</p>
+<p align="center">https://arifszn.github.io/ezprofile</p>
 
 <br/>
 
-<h3>:eye_speech_bubble: Live demo</h3>
+<p align="center">
+    <a href="https://arifszn.github.io/ezprofile">
+        <img src="https://arifszn.github.io/assets/img/hosted/ezprofile/preview.gif" width="60%" alt="Preview"/>
+    </a>
+    <br/>
+    <a href="#arifszn"><img src="https://arifszn.github.io/assets/img/drop-shadow.png" width="60%" alt="Shadow"/></a>
+</p>
 
-Check live demonstration <a href="https://dorota1997.github.io/react-frontend-dev-portfolio/"><strong>here</strong></a>
+**ezProfile** is an easy-to-customize personal dev portfolio builder that is created with React.js. When you manage the code in a GitHub repository, it will automatically render a webpage with the owner's profile information, including a photo, bio, and public repositories. Also, it includes space to highlight your details, job history, education history, skills, and recent blog posts.
 
-<img width="100%" src="https://github.com/Dorota1997/react-frontend-dev-portfolio/blob/images/images/react_portfolio_about.png" alt="react frontend dev portfolio preview"/>
+It's all possible using [GitHub API](https://developer.github.com/v3/) (for automatically populating your website with content) and [Article-api](https://github.com/arifszn/article-api) (for fetching recent blog posts).
 
-<h3>:books: Getting started</h3>
+✓ [21 Themes](#themes)\
+✓ [Google Analytics](#google-analytics)\
+✓ [Hotjar](#hotjar)\
+✓ [Meta Tags](#meta-tags)\
+✓ [Avatar and Bio](#avatar-and-bio)\
+✓ [Social Links](#social-links)\
+✓ [Skills](#skills)\
+✓ [Experience](#experience)\
+✓ [Education](#education)\
+✓ [Projects](#projects)\
+✓ [Blog Posts](#blog-posts)
 
-1. Clone or fork project.
-2. Install required dependencies with `npm install`.
-3. Remove `homepage` entirely from `package.json` or set it to single dot. 
+To view a live example, **[click here](https://arifszn.github.io/ezprofile)**.
 
+
+
+## 🛠 Installation & Set Up
+
+These instructions will get you a copy of the project and deploy your website online!
+
+  - **[Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo)** the repo so you have your own project to customize by clicking the fork icon on the top right side. A "fork" is a copy of a repository.
+  - Rename your forked repository to <code>username.github.io</code> in github, where <code>username</code> is your GitHub username (or organization name).
+  - Go to your repo's **Actions** page and enable workflows.
+  
+    ![Workflows](https://arifszn.github.io/assets/img/hosted/ezprofile/workflows.png)
+
+  - Open <code>package.json</code>, and change <code>homepage</code>'s value to <code>https://username.github.io</code>.
+  
+    ```js
+    // package.json
+    {
+      // ...
+      "homepage": "https://username.github.io",
+    }
+    ```
+
+  - Now commit to your **main** branch with your changes.
+  - The CI/CD pipeline will publish your page at the gh-pages branch automatically.
+  - Go to your repo's **Settings** -> **Pages** -> **Source** and change the branch to gh-pages and click **save**.
+  - Your personal portfolio will be live at <code>username.github.io</code>.
+  - Any time you commit a change to the **main** branch, the website will be automatically updated.
+
+  
+You can skip the above steps and do a manual deployment by running <code>npm run deploy</code>. For more info, visit [here](https://create-react-app.dev/docs/deployment/#github-pages).
+
+As this is a create react app, you can also host your website to Netlify, Vercel, Heroku, or other popular services. Please refer to this [doc](https://create-react-app.dev/docs/deployment) for a detailed deployment guide to other services.
+
+If you see only <code>README</code> at <code>username.github.io</code>, be sure to change your GitHub Page's source to <code>gh-pages</code> branch. See [how to](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site). Also, if you face any issue rendering the website, double-check the `homepage` value in the package.json.
+
+
+
+## 🎨 Customization
+
+All the magic happens in the file <code>src/config.js</code>. Open it and modify it according to your preference.
+
+These are the default values:
+
+<details>
+<summary>config.js</summary>
+
+```js
+// config.js
+module.exports = {
+  github: {
+    username: 'arifszn', // Your GitHub org/user name. (Required)
+    sortBy: 'stars', // stars | updated
+    limit: 8, // How many projects to display.
+    exclude: {
+      forks: false, // Forked projects will not be displayed if set to true.
+      projects: [] // These projects will not be displayed. example: ['my-project1', 'my-project2']
+    }
+  },
+  social: {
+    linkedin: '',
+    twitter: '',
+    facebook: '',
+    dribbble: '',
+    behance: '',
+    medium: '',
+    devto: '',
+    website: '',
+    phone: '',
+    email: ''
+  },
+  skills: [
+    'JavaScript',
+    'React.js',
+  ],
+  experiences: [
+    {
+      company: 'Company name 1',
+      position: 'Software Engineer',
+      from: 'July 2019',
+      to: 'Present'
+    },
+    {
+      company: 'Company name 2',
+      position: 'Jr. Software Engineer',
+      from: 'January 2019',
+      to: ' June 2019'
+    }
+  ],
+  education: [
+    {
+      institution: 'Institution name 1',
+      degree: 'Bachelor of Science',
+      from: '2015',
+      to: '2019'
+    },
+    {
+      institution: 'Institution name 2',
+      degree: 'Higher Secondary Certificate (HSC)',
+      from: '2012',
+      to: '2014',
+    }
+  ],
+  blog: {
+    // Display blog posts from your medium or dev.to account. (Optional)
+    source: 'dev.to', // medium | dev.to
+    username: 'arifszn',
+    limit: 5 // How many posts to display. Max is 10.
+  },
+  googleAnalytics: {
+    // GA3 tracking id/GA4 tag id
+    id: '' // UA-XXXXXXXXX-X | G-XXXXXXXXXX
+  },
+  hotjar: {
+    id: '',
+    snippetVersion : 6 
+  },
+  themeConfig: {
+    default: 'light',
+
+    // Hides the theme change switch
+    // Useful if you want to support a single color mode
+    disableSwitch: false,
+
+    // Should we use the prefers-color-scheme media-query,
+    // using user system preferences, instead of the hardcoded default
+    respectPrefersColorScheme: true,
+
+    // Available themes. To remove any theme, exclude from here.
+    themes: [
+      'light',
+      'dark',
+      'cupcake',
+      'bumblebee',
+      'emerald',
+      'corporate',
+      'synthwave',
+      'retro',
+      'cyberpunk',
+      'valentine',
+      'halloween',
+      'garden',
+      'forest',
+      'aqua',
+      'lofi',
+      'pastel',
+      'fantasy',
+      'wireframe',
+      'black',
+      'luxury',
+      'dracula'
+    ]
+  }
+}
 ```
-// package.json
-{
-  "name": "react-frontend-dev-portfolio",
-  "homepage": "https://dorota1997.github.io/react-frontend-dev-portfolio/",   <-- remove/edit this
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-  ...
+</details>
+
+
+### Themes
+
+There are 21 themes available that can be selected from the dropdown. 
+
+The default theme can be specified.
+
+```js
+// config.js
+module.exports = {
+  // ...
+  themeConfig: {
+    default: 'light',
+    // ...
+  }
 }
 ```
 
-4. `npm start` project and customize it.
-5. Deploy on github-pages using `npm run deploy` command.
+![Theme Dropdown](https://arifszn.github.io/assets/img/hosted/ezprofile/themes-1.png)
 
-<pre>
-⚠️ Note that:
-- if you want to have portfolio on different repository than `{username}.github.io`, 
-set `homepage` in `package.json` to `https://{username}.github.io/{repository-name}/` 
-before deploying portfolio.
-- if you want to run it locally with <strong>npm run start</strong>, make sure that you have edited 
-homepage property or json data won't load.
-</pre>
+Here are some screenshots of different themes.\
+<br/>
+![Themes](https://arifszn.github.io/assets/img/hosted/ezprofile/themes-2.png)\
+<br/>
+![Themes](https://arifszn.github.io/assets/img/hosted/ezprofile/themes-6.png)\
+<br/>
+![Themes](https://arifszn.github.io/assets/img/hosted/ezprofile/themes-7.png)
 
-<h3>:star: Inspirations</h3>
 
-<a href="https://github.com/stephane-monnot/react-vertical-timeline">React Vertical Timeline</a> <br/>
-<a href="https://github.com/rcaferati/react-awesome-slider">React Awesome Slider</a> <br/>
-<a href="https://github.com/markusenglund/react-switch">React Switch</a> <br/>
-<a href="https://github.com/catalinmiron/react-typical">React Typical</a> <br/>
-<a href="https://iconify.design/icon-sets/?query=angular">Iconify Design</a> <br/>
-<a href="https://www.w3docs.com/snippets/css/how-to-create-polaroid-image-with-css.html#">Polaroid effect</a> <br/>
-<a href="https://tholman.com/github-corners/">GitHub Ref Corner</a>
+### Google Analytics
 
-<h3>:memo: Changelog</h3>
+ezFolio supports both GA3 and GA4. If you do not want to use Google Analytics, keep the <code>id</code> empty.
+```js
+// config.js
+module.exports = {
+  // ...
+  googleAnalytics: {
+    id: ''
+  },
+}
+```
 
-<details>
-<summary>[ 03.10.2021, contributor: <a href="https://github.com/shahednasser">@shahednasser</a> ]</summary>
-<pre>
-- updated sass dependency.
-</pre>
-</details>
-<details>
-<summary>[ 26.05.2021, contributor: <a href="https://github.com/DavidMatalik">@DavidMatalik</a> ]</summary>
-<pre>
-- removed nonexisting logos references: logo192 and logo512.  
-</pre>
-</details>
-<details>
-<summary>[ 17.01.2021, contributor: <a href="https://github.com/igorperic17">@igorperic17</a> ]</summary>
-<pre>
-- wrapped the Typical component into a fixed height div due to the bad transitions for a brief moment between two titles when the string is empty (the content bellow jumps up-down very quickly).
-- removed the title from the page document.title due to the increased title length.
-</pre>
-</details>
-<details>
-<summary>[ 30.11.2020, contributor: <a href="https://github.com/dorota1997">@dorota1997</a> ]</summary>
-<pre>
-- updated readme section
-- fixed problem of json files not being read
-</pre>
-</details>
-<details>
-<summary>[ 29/30.11.2020, contributor: <a href="https://github.com/trolit">@trolit</a> ]</summary>
-<pre>
-- changed resume files names to more "universal"
-- moved languages names to global variables
-- moved section names to json files
-- added target="_blank" for footer links
-- added startDate property for projects
-- excluded common json data to portfolio_shared_data file
-- added header section height calculation based on formula: window.innerHeight - 140
-- small changes to vertical timeline item (color/font-size)
-- project link in modal is not shown if empty
-- changed slider preloader bar color
-- wrapped each skill into tile
-- footer fullname is fetched from json now
-- added mising "px" for avatar in About.js component
-- updated json files content
-- page title is fetched from json data
-- added GitHub reference corner "label"
-- edited page meta
-- added margin, padding 0 for html tag
-- excluded light theme ref from theme-dark file
-- slightly changed Header.js section look
-- made some changes to App.js to apply global variables/shared json etc.
-- centered fullname/pos/theme toggler in Header section
-</pre>
-</details>
+Besides tracking visitors, ezFolio will track click events on projects and blog posts, and send them to Google Analytics.\
+<br/>
+![Event](https://www.arifszn.com/assets/img/hosted/ezprofile/event.png)
 
-<h3>:gear: Contribution</h3>
+### Hotjar
 
-If you have any suggestions on what to improve in <em>react-frontend-dev-portfolio</em> and would like to share them, feel free to leave an issue or fork project to implement your own ideas :slightly_smiling_face:
+ezProfile supports hotjar. If you do not want to use Hotjar, keep the <code>id</code> empty.
 
-<h3>:camera: Credits(images)</h3>
+```js
+// config.js
+module.exports = {
+  // ...
+  hotjar: {
+    id: '',
+    snippetVersion : 6 
+  },
+}
+```
 
-Images used in portfolio template come from Pixabay, references:
+### Meta Tags
 
-<a href="https://pixabay.com/photos/people-woman-girl-clothing-eye-2563491/">p1</a>, <a href="https://pixabay.com/photos/dog-puppy-sharpei-petit-animal-1865712/">p2</a>, <a href="https://pixabay.com/photos/night-camera-photographer-photo-1927265/">p3</a>, <a href="https://pixabay.com/photos/road-forest-season-autumn-fall-1072823/">p4</a>, <a href="https://pixabay.com/photos/neuschwanstein-castle-bavaria-701732/">p5</a>, <a href="https://pixabay.com/photos/hohenschwangau-alps-alpsee-bavaria-532864/">p6</a>
+Meta tags will be auto-generated from configs dynamically. However, you can also manually add meta tags in <code>public\index.html</code>
+
+
+### Avatar and Bio
+
+Your github avatar and bio will be displayed here.\
+<br/>
+![Avatar Bio](https://arifszn.github.io/assets/img/hosted/ezprofile/avatar-card.png)
+
+
+### Social Links
+
+ezProfile supports linking your social media services you're using, including LinkedIn, Twitter, Facebook, Dribbble, Behance, Medium, dev.to, personal website, phone and email.
+```js
+// config.js
+module.exports = {
+  // ...
+  social: {
+    linkedin: 'ariful-alam',
+    twitter: 'arif_swozon',
+    facebook: '',
+    dribbble: '',
+    behance: '',
+    medium: '',
+    devto: '',
+    website: 'https://arifszn.github.io',
+    phone: '',
+    email: ''
+  },
+}
+```
+
+
+### Skills
+
+To showcase your skills provide them here.
+```js
+// config.js
+module.exports = {
+  // ...
+  skills: [
+    'JavaScript',
+    'React.js',
+  ],
+}
+```
+
+Empty array will hide the skills section.
+
+
+### Experience
+
+Provide your job history in <code>experiences</code>.
+```js
+// config.js
+module.exports = {
+  // ...
+  experiences: [
+    {
+      company: 'Company name 1',
+      position: 'Software Engineer',
+      from: 'July 2019',
+      to: 'Present'
+    },
+    {
+      company: 'Company name 2',
+      position: 'Jr. Software Engineer',
+      from: 'January 2019',
+      to: ' June 2019'
+    }
+  ],
+}
+```
+
+Empty array will hide the experience section.
+
+
+### Education
+
+Provide your education history in <code>education</code>.
+```js
+// config.js
+module.exports = {
+  // ...
+  education: [
+    {
+      institution: 'Institution name 1',
+      degree: 'Bachelor of Science',
+      from: '2015',
+      to: '2019'
+    },
+    {
+      institution: 'Institution name 2',
+      degree: 'Higher Secondary Certificate (HSC)',
+      from: '2012',
+      to: '2014',
+    }
+  ],
+}
+```
+
+Empty array will hide the education section.
+
+
+### Projects
+
+Your public repo from github will be displayed here automatically. You can limit how many projects do you want to be displayed. Also, you can hide forked or specific repo.
+
+```js
+// config.js
+module.exports = {
+  // ...
+  github: {
+    username: 'arifszn',
+    sortBy: 'stars',
+    limit: 8,
+    exclude: {
+      forks: false,
+      projects: ['my-project1', 'my-project2']
+    }
+  },
+}
+```
+
+### Blog Posts
+
+If you have [medium](https://medium.com) or [dev.to](https://dev.to) account, you can show your recent blog posts in here just by providing your medium/dev.to username. You can limit how many posts to display (Max is <code>10</code>).
+
+```js
+// config.js
+module.exports = {
+  // ...
+  blog: {
+    source: 'dev.to',
+    username: 'arifszn',
+    limit: 5
+  },
+}
+```
+
+![Blog](https://arifszn.github.io/assets/img/hosted/ezprofile/blog.png)
+
+The posts are fetched by [Article-api](https://github.com/arifszn/article-api).
+
+
+
+## 📢 Please Read
+
+I intend to keep my works open source. Please do not discourage me by claiming this work by copying it as your own. However, You are open to use this project by forking it and change any code necessary by giving attribute to the original author. Please see this [issue](https://github.com/arifszn/ezprofile/issues/11) for more info.
+
+
+## 💖 Support
+
+If you are using this project and happy with it or just want to encourage me to continue creating stuff, you can do it by just starring and sharing the project.
+
+
+## 💡 Contributing
+
+Any contributors who want to make this project better can make contributions, which will be greatly appreciated. To contribute, clone this repo locally and commit your code to a new branch. Feel free to create an issue or make a pull request.
+
+## 📄 License
+
+**ezProfile** is licensed under the [Apache-2.0 License](https://github.com/arifszn/ezprofile/blob/main/LICENSE).
