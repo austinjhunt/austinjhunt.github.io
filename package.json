@@ -1,6 +1,6 @@
 {
   "name": "austinjhunt",
-  "version": "1.1.2",
+  "version": "1.1.16",
   "description": "Kickstart your personal portfolio with Github Api and blog",
   "homepage": "",
   "private": true,
@@ -22,6 +22,7 @@
     "moment": "^2.29.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
+    "react-cache-buster": "^0.1.6",
     "react-dom": "^17.0.2",
     "react-helmet-async": "^1.1.0",
     "react-hotjar": "^3.0.1",
@@ -32,11 +33,12 @@
   },
   "scripts": {
     "start": "craco start",
-    "build": "craco build",
+    "build": "npm run generate-meta-tag && craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "generate-meta-tag": "node ./node_modules/react-cache-buster/dist/generate-meta-tag.js"
   },
   "eslintConfig": {
     "extends": [
@@ -58,8 +60,9 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.8.6",
+    "html-webpack-plugin": "^4.5.0",
     "postcss": "^7.0.36",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.7"
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
   },
   "keywords": [
     "personal-site",

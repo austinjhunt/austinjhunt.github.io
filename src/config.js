@@ -3,12 +3,17 @@ module.exports = {
   github: {
     username: "austinjhunt", // Your GitHub org/user name. (Required)
     sortBy: "updated", // stars | updated
-    limit: 8, // How many projects to display.
+    limit: 10, // How many projects to display.
     exclude: {
       forks: false, // Forked projects will not be displayed if set to true.
-      projects: ["austinjhunt.github.io", "austinjhunt", "cofcdigikit"], // These projects will not be displayed. example: ['my-project1', 'my-project2']
+      projects: ["austinjhunt.github.io", "austinjhunt"], // These projects will not be displayed. example: ['my-project1', 'my-project2']
     },
   },
+  sketchyactivity: {
+    token: "52cdcc726dabfbe7356dc273f2f5a238f6d40c10",
+  },
+  mainIconSize: "4em",
+
   social: {
     linkedin: "huntaj",
     twitter: "austinsketches",
@@ -24,29 +29,113 @@ module.exports = {
   },
   skills: [
     "React.js",
+    "Tailwind CSS",
+    "Node.js",
+    "NPM",
+    "JavaScript",
     "Django",
     "Python",
     "Bash",
     "PowerShell",
-    "Node.js",
     "MySQL",
     "PHP",
     "HTML 5",
-    "CSS",
-    "SASS & SCSS",
-    "Bootstrap",
-    "JavaScript",
-    "Git",
+    "CSS, SASS, SCSS",
+    "Bootstrap (2-5)",
+    "Git, GitHub",
     "GitHub Actions",
-    "Docker",
+    "Docker, DockerHub",
     "Kubernetes",
     "Ansible",
     "AWS EC2",
     "Nagios/NCPA",
     "Icinga 2",
     "nuXmv",
-    "Stateflow",
   ],
+  web_portfolio: {
+    title:
+      "Personal Web Portfolio (excluding many web projects for College of Charleston)",
+    limit: 5,
+    items: [
+      {
+        name: "Greenville County SC Sortable & Searchable Tax Sale List",
+        url: "https://greenville-sc-tax-sales.herokuapp.com/",
+        description:
+          "This lightweight app makes the Greenville County Tax Sale list found at http://www.greenvillecounty.org/appsas400/taxsale/ searchable and sortable to help you find the sales that match your preferences. It's the same data, scraped from that webpage, but presented with more options. The original list unfortunately does not offer the ability to sort by the amount due, for example; with this app, you can quickly find the sales that are cheapest.",
+        github_repo_url:
+          "https://github.com/austinjhunt/greenville-sc-tax-sales",
+        tech: [
+          "React",
+          "Fetch API",
+          "Flask",
+          "Heroku",
+          "Git/GitHub",
+          "Tailwind CSS",
+        ],
+        image: "/img/web_portfolio/gvl-tax-sales.png",
+      },
+      {
+        name: "arXiva",
+        url: "https://arxiva.org",
+        description:
+          "A free research tool turning arXiv into something much more social, interactive, searchable, and personalized, leveraging multiple cloud resources for high performance and scalability. Built in collaboration with John D. Cobb (https://johndcobb.github.io/)",
+        github_repo_url: "https://github.com/johndcobb/arxiva",
+        tech: [
+          "ElasticSearch",
+          "AWS Lightsail",
+          "Django",
+          "cron",
+          "Git/GitHub",
+          "Docker",
+          "AWS Lambda",
+          "AWS Eventbridge",
+          "Jenkins",
+        ],
+        image: "/img/web_portfolio/arxiva.png",
+      },
+      {
+        name: "sketchyactivity",
+        url: "https://www.sketchyactivity.com",
+        description:
+          "Personal portraiture portfolio, built with Django, deployed on Heroku, integrated with Slack for pageview notifications and with AWS S3 for image file storage",
+        github_repo_url: "https://github.com/austinjhunt/sketchyactivity",
+        tech: [
+          "Django",
+          "Git/Github",
+          "Heroku",
+          "AWS S3",
+          "Slack webhooks",
+          "Google Analytics",
+          "JS",
+          "HTML",
+          "Bootstrap",
+          "CSS",
+        ],
+        image: "/img/web_portfolio/sketchyactivity.png",
+      },
+      {
+        name: "PolyDoc - simultaneously manage many documents",
+        url: "https://polydoc.herokuapp.com",
+        description:
+          "Web app built for Vanderbilt Univ. CS 5279 project for simultaneously viewing and managing many documents at one time; includes a Google Drive integration; designed primarily for teachers who use Google for assignments",
+        github_repo_url: "https://github.com/austinjhunt/polydoc",
+        tech: [
+          "Django",
+          "Git/Github",
+          "GitHub Actions (with Django test framework)",
+          "Heroku",
+          "Google Cloud Platform",
+          "JS",
+          "HTML",
+          "Bootstrap",
+          "CSS, SASS, SCSS",
+          "Google Drive API",
+          "PDF2Image",
+        ],
+        image: "/img/web_portfolio/polydoc.png",
+      },
+    ],
+  },
   experiences: [
     {
       company: "College of Charleston",
@@ -96,7 +185,7 @@ module.exports = {
     snippetVersion: 6,
   },
   themeConfig: {
-    default: "dark",
+    default: "synthwave",
 
     // Hides the switch in the navbar
     // Useful if you want to support a single color mode

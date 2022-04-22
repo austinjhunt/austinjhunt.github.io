@@ -1,16 +1,19 @@
 import { Fragment, useContext } from "react";
-import { ga, languageColor, skeleton } from "../helpers/utils";
-import { AiOutlineStar, AiOutlineFork } from "react-icons/ai";
+import { ga, skeleton } from "../helpers/utils";
+import { BiCodeAlt } from "react-icons/bi";
+import { GiSpiderWeb } from "react-icons/gi";
+import { BsStack } from "react-icons/bs";
 import config from "../config";
 import PropTypes from "prop-types";
 import { LoadingContext } from "../contexts/LoadingContext";
 
-const Project = (props) => {
+const Website = (props) => {
   const [loading] = useContext(LoadingContext);
-
+  let portfolioItems = config.web_portfolio.items;
   const renderSkeleton = () => {
     let array = [];
-    for (let index = 0; index < config.github.limit; index++) {
+
+    for (let index = 0; index < config.web_portfolio.limit; index++) {
       array.push(
         <div className="card shadow-lg compact bg-base-100" key={index}>
           <div className="flex justify-between flex-col p-8 h-full w-full">
@@ -54,8 +57,19 @@ const Project = (props) => {
     return array;
   };
 
+  const renderTechForProject = (project) => {
+    return project.tech.map((tech, index) => (
+      <div
+        key={index}
+        className="m-1 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 badge-primary bg-opacity-75 rounded-full"
+      >
+        {tech}
+      </div>
+    ));
+  };
+
   const renderProjects = () => {
-    return props.repo.map((item, index) => (
+    return portfolioItems.map((item, index) => (
       <div
         className="card shadow-lg compact bg-base-100 cursor-pointer"
         key={index}
@@ -73,53 +87,39 @@ const Project = (props) => {
             console.error(error);
           }
 
-          window.open(item.html_url, "_blank");
+          window.open(item.url, "_blank");
         }}
       >
         <div className="flex justify-between flex-col p-8 h-full w-full">
           <div>
-            <div className="flex items-center opacity-60">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                className="inline-block w-5 h-5 mr-2 stroke-current"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
-                ></path>
-              </svg>
+            <div className="flex items-center opacity-60  pb-2 border-bottom">
               <span>
                 <h5 className="card-title text-lg">{item.name}</h5>
               </span>
+              <span className="ml-auto">
+                <BiCodeAlt size={"2em"}></BiCodeAlt>
+              </span>
+            </div>
+            <div>
+              <img src={`${item.image}`}></img>
             </div>
             <p className="mb-5 mt-1 text-base-content text-opacity-60 text-sm">
               {item.description}
             </p>
+            <div>
+              <div className="flex items-center pb-2 border-bottom">
+                <span>
+                  <h6>Tech Stack:</h6>
+                </span>
+                <span className="ml-auto">
+                  <BsStack></BsStack>
+                </span>
+              </div>
+              {renderTechForProject(item)}
+            </div>
           </div>
           <div className="flex justify-between text-sm text-base-content text-opacity-60">
-            <div className="flex flex-grow">
-              <span className="mr-3 flex items-center">
-                <AiOutlineStar className="mr-0.5" />
-                <span>{item.stargazers_count}</span>
-              </span>
-              <span className="flex items-center">
-                <AiOutlineFork className="mr-0.5" />
-                <span>{item.forks_count}</span>
-              </span>
-            </div>
-            <div>
-              <span className="flex items-center">
-                <div
-                  className="w-3 h-3 rounded-full mr-1 opacity-60"
-                  style={{ backgroundColor: languageColor(item.language) }}
-                />
-                <span>{item.language}</span>
-              </span>
-            </div>
+            <div className="flex flex-grow"></div>
           </div>
         </div>
       </div>
@@ -140,20 +140,17 @@ const Project = (props) => {
                         {loading ? (
                           skeleton({ width: "w-28", height: "h-8" })
                         ) : (
-                          <span className="opacity-70">My Projects</span>
+                          <span className="opacity-70">
+                            {config.web_portfolio.title}
+                          </span>
                         )}
                       </h5>
                       {loading ? (
                         skeleton({ width: "w-10", height: "h-5" })
                       ) : (
-                        <a
-                          href={`https://github.com/${config.github.username}?tab=repositories`}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="opacity-50"
-                        >
-                          See All
-                        </a>
+                        <span>
+                          <GiSpiderWeb size={config.mainIconSize}></GiSpiderWeb>
+                        </span>
                       )}
                     </div>
                   </li>
@@ -163,7 +160,7 @@ const Project = (props) => {
           </div>
           <div className="col-span-2">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {loading || !props.repo ? renderSkeleton() : renderProjects()}
+              {loading || !portfolioItems ? renderSkeleton() : renderProjects()}
             </div>
           </div>
         </div>
@@ -172,8 +169,8 @@ const Project = (props) => {
   );
 };
 
-Project.propTypes = {
-  repo: PropTypes.array,
+Website.propTypes = {
+  webPortfolio: PropTypes.array,
 };
 
-export default Project;
+export default Website;

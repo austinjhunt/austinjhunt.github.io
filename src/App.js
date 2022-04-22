@@ -8,8 +8,10 @@ import moment from "moment";
 import Details from "./components/Details";
 import Skill from "./components/Skill";
 import Experience from "./components/Experience";
+import Drawings from "./components/Drawings";
 import Education from "./components/Education";
 import Project from "./components/Project";
+import Website from "./components/Website";
 import Blog from "./components/Blog";
 import MetaTags from "./components/MetaTags";
 import { LoadingContext } from "./contexts/LoadingContext";
@@ -22,6 +24,7 @@ function App() {
   const [repo, setRepo] = useState(null);
   const [error, setError] = useState(null);
   const [rateLimit, setRateLimit] = useState(null);
+  const [drawings, setDrawings] = useState([]);
 
   useEffect(() => {
     if (theme) {
@@ -46,17 +49,18 @@ function App() {
         setProfile(profileData);
       })
       .then(() => {
+        // include everything except what's in exclude
         let excludeRepo = ``;
 
         config.github.exclude.projects.forEach((project) => {
+          // the + is just adding the query; the - is saying NOT this repo
           excludeRepo += `+-repo:${config.github.username}/${project}`;
         });
 
         let query = `user:${config.github.username}+fork:${!config.github
           .exclude.forks}${excludeRepo}`;
-
         let url = `https://api.github.com/search/repositories?q=${query}&sort=${config.github.sortBy}&per_page=${config.github.limit}&type=Repositories`;
-
+        console.log(url);
         axios
           .get(url, {
             headers: {
@@ -65,7 +69,7 @@ function App() {
           })
           .then((response) => {
             let data = response.data;
-
+            console.log(data);
             setRepo(data.items);
           })
           .catch((error) => {
@@ -75,6 +79,19 @@ function App() {
       .catch((error) => {
         handleError(error);
       })
+      // .then(() => {
+      //   axios
+      //     .get("https://www.sketchyactivity.com/api/portfolio", {
+      //       headers: {
+      //         Authorization: `Token ${config.sketchyactivity.token}`,
+      //       },
+      //     })
+      //     .then((response) => {
+      //       console.log(response);
+      //       setDrawings(response.data);
+      //     })
+      //     .catch((error) => console.log(error));
+      // })
       .finally(() => {
         setLoading(false);
       });
@@ -159,6 +176,7 @@ function App() {
                 </div>
                 <div className="lg:col-span-2 col-span-1">
                   <div className="grid grid-cols-1 gap-6">
+                    <Website />
                     <Project repo={repo} />
                     <Blog />
                   </div>
