@@ -231,6 +231,10 @@ export const sanitizeConfig = (config) => {
     experiences:
       typeof config.experiences !== 'undefined' ? config.experiences : [],
     education: typeof config.education !== 'undefined' ? config.education : [],
+    webPortfolio:
+      typeof config.webPortfolio !== 'undefined' ? config.webPortfolio : {},
+    artPortfolio:
+      typeof config.artPortfolio != 'undefined' ? config.artPortfolio : {},
     blog: {
       source:
         typeof config.blog !== 'undefined' &&

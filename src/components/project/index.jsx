@@ -2,6 +2,7 @@ import { Fragment } from 'react';
 import { AiOutlineStar, AiOutlineFork } from 'react-icons/ai';
 import PropTypes from 'prop-types';
 import { ga, languageColor, skeleton } from '../../helpers/utils';
+import { BsGithub } from 'react-icons/bs';
 
 const Project = ({ repo, loading, github, googleAnalytics }) => {
   const renderSkeleton = () => {
@@ -143,14 +144,17 @@ const Project = ({ repo, loading, github, googleAnalytics }) => {
                   {loading ? (
                     skeleton({ width: 'w-10', height: 'h-5' })
                   ) : (
-                    <a
-                      href={`https://github.com/${github.username}?tab=repositories`}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="opacity-50"
-                    >
-                      See All
-                    </a>
+                    <div>
+                      <BsGithub className="mb-3" size="3em"></BsGithub>
+                      <a
+                        href={`https://github.com/${github.username}?tab=repositories`}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="opacity-50"
+                      >
+                        See All
+                      </a>
+                    </div>
                   )}
                 </div>
                 <div className="col-span-2">

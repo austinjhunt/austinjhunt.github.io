@@ -10,6 +10,8 @@ import Skill from './skill';
 import Experience from './experience';
 import Education from './education';
 import Project from './project';
+import WebProjects from './web-projects';
+import ArtPortfolio from './art-portfolio';
 import Blog from './blog';
 import {
   genericError,
@@ -35,6 +37,7 @@ const GitProfile = ({ config }) => {
   const [loading, setLoading] = useState(true);
   const [profile, setProfile] = useState(null);
   const [repo, setRepo] = useState(null);
+  const [artPortfolio, setartPortfolio] = useState(null);
 
   useEffect(() => {
     if (sanitizedConfig) {
@@ -85,8 +88,20 @@ const GitProfile = ({ config }) => {
           })
           .then((response) => {
             let data = response.data;
-
             setRepo(data.items);
+          })
+          .then(() => {
+            axios
+              .get(sanitizedConfig.artPortfolio.api, {
+                headers: {
+                  Authorization: `Token ${sanitizedConfig.artPortfolio.token}`,
+                },
+              })
+              .then((response) => {
+                console.log(response.data);
+                setartPortfolio(response.data);
+              })
+              .catch((error) => console.log(error));
           })
           .catch((error) => {
             handleError(error);
@@ -174,12 +189,25 @@ const GitProfile = ({ config }) => {
                   </div>
                   <div className="lg:col-span-2 col-span-1">
                     <div className="grid grid-cols-1 gap-6">
+                      <ArtPortfolio
+                        loading={loading}
+                        title={sanitizedConfig.artPortfolio.title}
+                        limit={sanitizedConfig.artPortfolio.limit}
+                        website={sanitizedConfig.artPortfolio.website}
+                        artPortfolio={artPortfolio}
+                      ></ArtPortfolio>
+                      <WebProjects
+                        loading={loading}
+                        webPortfolio={sanitizedConfig.webPortfolio}
+                        googleAnalytics={sanitizedConfig.googleAnalytics}
+                      ></WebProjects>
                       <Project
                         repo={repo}
                         loading={loading}
                         github={sanitizedConfig.github}
                         googleAnalytics={sanitizedConfig.googleAnalytics}
                       />
+
                       <Blog
                         loading={loading}
                         googleAnalytics={sanitizedConfig.googleAnalytics}
