@@ -49,7 +49,7 @@ const config = {
   ],
   artPortfolio: {
     title: 'Recent Portraiture Work',
-    limit: 4,
+    limit: 6,
     api: 'https://www.sketchyactivity.com/api/portfolio',
     website: 'https://www.sketchyactivity.com',
     token: '52cdcc726dabfbe7356dc273f2f5a238f6d40c10',

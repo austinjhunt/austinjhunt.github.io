@@ -146,7 +146,7 @@ const Blog = ({ loading, blog, googleAnalytics }) => {
                     <h2 className="font-semibold text-base-content opacity-60">
                       {article.title}
                     </h2>
-                    <p className="opacity-50 text-xs">
+                    <p className="opacity-50 text-s">
                       {moment(article.publishedAt).fromNow()}
                     </p>
                     <p className="mt-3 text-base-content text-opacity-60 text-sm">
@@ -155,7 +155,7 @@ const Blog = ({ loading, blog, googleAnalytics }) => {
                     <div className="mt-4 flex items-center flex-wrap justify-center md:justify-start">
                       {article.categories.map((category, index2) => (
                         <div
-                          className="py-2 px-4 text-xs leading-3 rounded-full bg-base-300 mr-1 mb-1 opacity-50"
+                          className="py-2 px-4 text-s leading-3 rounded-full bg-base-300 mr-1 mb-1 opacity-50"
                           key={index2}
                         >
                           #{category}
@@ -175,7 +175,7 @@ const Blog = ({ loading, blog, googleAnalytics }) => {
   return (
     <Fragment>
       {displaySection(blog) && (
-        <div className="col-span-1 lg:col-span-2">
+        <div className="card shadow-lg compact bg-base-100">
           <div className="grid grid-cols-2 gap-6">
             <div className="col-span-2">
               <div className="card compact shadow-sm glass">

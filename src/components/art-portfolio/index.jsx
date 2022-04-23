@@ -38,15 +38,16 @@ const ArtPortfolio = ({ loading, artPortfolio, limit, title, website }) => {
   };
 
   let ArtGallery = (artPortfolio) => {
-    console.log(artPortfolio);
     return (
-      <div className="grid grid-cols-4">
+      <div className="grid grid-cols-6 ">
         {artPortfolio.slice(0, limit).map((d, index) => (
-          <div key={index} className="col-span-1 shadow-md p-3">
-            <img
-              className="w-full rounded"
-              src={`${d.s3_copied_smaller_drawing_private_url}`}
-            ></img>
+          <div key={index} className="col-span-1 shadow-md p-3 ">
+            <a target="_blank" title={`${d.portrait_name}`} href={website}>
+              <img
+                className="w- rounded"
+                src={`${d.s3_copied_smaller_drawing_private_url}`}
+              ></img>
+            </a>
           </div>
         ))}
       </div>
@@ -66,10 +67,7 @@ const ArtPortfolio = ({ loading, artPortfolio, limit, title, website }) => {
                 <h6>
                   <p className="opacity-70 d-block">
                     You can find more of my work at{' '}
-                    <a
-                      className="font-bold leading-sm px-3 py-1 mx-2 badge-primary bg-opacity-90 rounded-full"
-                      href={website}
-                    >
+                    <a className="font-bold leading-sm " href={website}>
                       {website}
                     </a>
                   </p>

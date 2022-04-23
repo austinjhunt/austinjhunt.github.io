@@ -8,7 +8,6 @@ import PropTypes from 'prop-types';
 const WebProjects = ({ loading, webPortfolio, googleAnalytics }) => {
   let portfolioItems = webPortfolio.items;
   const renderSkeleton = () => {
-    console.log('rendering skeleton :)');
     let array = [];
     for (let index = 0; index < webPortfolio.limit; index++) {
       array.push(
@@ -57,7 +56,7 @@ const WebProjects = ({ loading, webPortfolio, googleAnalytics }) => {
     return project.tech.map((tech, index) => (
       <div
         key={index}
-        className="m-1 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 badge-primary bg-opacity-75 rounded-full"
+        className="m-1 text-s inline-flex items-center font-bold leading-sm uppercase px-3 py-1 badge-primary bg-opacity-75 rounded-full"
       >
         {tech}
       </div>

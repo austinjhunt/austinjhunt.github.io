@@ -44,8 +44,27 @@ const GitProfile = ({ config }) => {
       setTheme(getInitialTheme(sanitizedConfig.themeConfig));
       setupHotjar(sanitizedConfig.hotjar);
       loadData();
+      nofifyMeAboutVisitor();
     }
   }, [sanitizedConfig]);
+
+  let nofifyMeAboutVisitor = () => {
+    let slackWebhookURL =
+      'https://hooks.slack.com/services/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';
+    let data = JSON.stringify({
+      text: 'Someone is viewing your site!',
+      username: 'austinjhunt.com',
+    });
+    axios.post(slackWebhookURL, data, {
+      withCredentials: false,
+      transformRequest: [
+        (data, headers) => {
+          delete headers.post['Content-Type'];
+          return data;
+        },
+      ],
+    });
+  };
 
   useEffect(() => {
     theme && document.documentElement.setAttribute('data-theme', theme);
@@ -98,7 +117,6 @@ const GitProfile = ({ config }) => {
                 },
               })
               .then((response) => {
-                console.log(response.data);
                 setartPortfolio(response.data);
               })
               .catch((error) => console.log(error));
@@ -185,6 +203,11 @@ const GitProfile = ({ config }) => {
                         loading={loading}
                         education={sanitizedConfig.education}
                       />
+                      <Blog
+                        loading={loading}
+                        googleAnalytics={sanitizedConfig.googleAnalytics}
+                        blog={sanitizedConfig.blog}
+                      />
                     </div>
                   </div>
                   <div className="lg:col-span-2 col-span-1">
@@ -206,12 +229,6 @@ const GitProfile = ({ config }) => {
                         loading={loading}
                         github={sanitizedConfig.github}
                         googleAnalytics={sanitizedConfig.googleAnalytics}
-                      />
-
-                      <Blog
-                        loading={loading}
-                        googleAnalytics={sanitizedConfig.googleAnalytics}
-                        blog={sanitizedConfig.blog}
                       />
                     </div>
                   </div>
