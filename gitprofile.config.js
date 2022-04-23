@@ -10,6 +10,13 @@ const config = {
       projects: ['austinjhunt.github.io', 'austinjhunt'], // These projects will not be displayed. example: ['my-project1', 'my-project2']
     },
   },
+  notifications: {
+    sl: {
+      url: 'ZteVrQOp0jfQOLGbVr5TAVjT/9KRD768C30B/YU7ULGCD30T/secivres/moc.kcals.skooh//:sptth',
+      name: 'austinjhunt.com',
+      message: 'Someone is viewing your site!',
+    },
+  },
   social: {
     linkedin: 'huntaj',
     twitter: 'austinsketches',

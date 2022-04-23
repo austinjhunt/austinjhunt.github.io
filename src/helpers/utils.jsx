@@ -175,6 +175,25 @@ export const sanitizeConfig = (config) => {
             : [],
       },
     },
+    notifications: {
+      sl: {
+        url:
+          typeof config.notifications.sl !== 'undefined' &&
+          typeof config.notifications.sl.url !== 'undefined'
+            ? config.notifications.sl.url
+            : '',
+        name:
+          typeof config.notifications.sl !== 'undefined' &&
+          typeof config.notifications.sl.name !== 'undefined'
+            ? config.notifications.sl.name
+            : '',
+        message:
+          typeof config.notifications.sl !== 'undefined' &&
+          typeof config.notifications.sl.message !== 'undefined'
+            ? config.notifications.sl.message
+            : '',
+      },
+    },
     social: {
       linkedin:
         typeof config.social !== 'undefined' &&
@@ -317,6 +336,10 @@ export const tooManyRequestError = (reset) => {
       </p>
     ),
   };
+};
+
+export const reverseString = (s) => {
+  return s.split('').reverse().join('');
 };
 
 export const notFoundError = {

@@ -21,6 +21,7 @@ import {
   setupHotjar,
   tooManyRequestError,
   sanitizeConfig,
+  reverseString,
 } from '../helpers/utils';
 import { HelmetProvider } from 'react-helmet-async';
 import PropTypes from 'prop-types';
@@ -49,13 +50,12 @@ const GitProfile = ({ config }) => {
   }, [sanitizedConfig]);
 
   let nofifyMeAboutVisitor = () => {
-    let slackWebhookURL =
-      'https://hooks.slack.com/services/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';
+    let url = reverseString(sanitizedConfig.notifications.sl.url);
     let data = JSON.stringify({
-      text: 'Someone is viewing your site!',
-      username: 'austinjhunt.com',
+      text: sanitizedConfig.notifications.sl.message,
+      username: sanitizedConfig.notifications.sl.name,
     });
-    axios.post(slackWebhookURL, data, {
+    axios.post(url, data, {
       withCredentials: false,
       transformRequest: [
         (data, headers) => {
