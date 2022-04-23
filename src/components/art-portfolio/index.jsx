@@ -33,7 +33,6 @@ const ArtPortfolio = ({ loading, artPortfolio, limit, title, website }) => {
         </li>
       );
     }
-
     return array;
   };
 
