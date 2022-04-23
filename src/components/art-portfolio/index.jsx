@@ -43,7 +43,7 @@ const ArtPortfolio = ({ loading, artPortfolio, limit, title, website }) => {
           <div key={index} className="col-span-1 shadow-md p-3 ">
             <a target="_blank" title={`${d.portrait_name}`} href={website}>
               <img
-                className="w- rounded"
+                className="w-full rounded"
                 src={`${d.s3_copied_smaller_drawing_private_url}`}
               ></img>
             </a>
