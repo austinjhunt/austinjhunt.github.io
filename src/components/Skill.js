@@ -30,7 +30,7 @@ const Skill = () => {
                 {loading ? (
                   skeleton({ width: "w-32", height: "h-8" })
                 ) : (
-                  <span className="opacity-70">Tech Stack</span>
+                  <span className="opacity-70">Tech Stack &amp; Skills</span>
                 )}
               </h5>
               <span className="ml-auto">
