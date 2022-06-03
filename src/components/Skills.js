@@ -23,6 +23,7 @@ const Skill = () => {
 
   let options = Object.keys(config.skills).map((key, index) => {
     return {
+      key: index,
       title: key,
       body: (
         <div className="p-3 flow-root">
