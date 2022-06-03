@@ -109,7 +109,7 @@ const Website = (props) => {
             <div>
               <div className="flex items-center pb-2 border-bottom">
                 <span>
-                  <h6>Tech Stack &amp; Skills:</h6>
+                  <h6>Tech Stack</h6>
                 </span>
                 <span className="ml-auto">
                   <BsStack></BsStack>

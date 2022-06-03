@@ -27,7 +27,7 @@ module.exports = {
     phone: "",
     email: "austinsketches@gmail.com",
   },
-  skills: [
+  techStack: [
     "React.js",
     "Tailwind CSS",
     "Node.js",
@@ -58,19 +58,22 @@ module.exports = {
     "Nagios/NCPA",
     "Icinga 2",
     "nuXmv",
-    "Software architecture modeling",
-    "UML",
     "Google Colaboratory",
     "webGME (web-based generic modeling environment)",
-    "Written communication",
-    "Verbal communication",
-    "Software documentation",
-    "Training/Demos",
-    "Resourcefulness",
-    "Problem solving",
-    "Multitasking",
-    "Customer service",
   ],
+
+  skills: {
+    soft: [
+      "Training/Demos",
+      "Resourcefulness",
+      "Problem solving",
+      "Multitasking",
+      "Customer service",
+      "Written communication",
+      "Verbal communication",
+    ],
+    hard: ["Software architecture modeling", "UML", "Software documentation"],
+  },
   web_portfolio: {
     title:
       "Personal Web Portfolio (excluding many web projects for College of Charleston)",

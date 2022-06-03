@@ -6,8 +6,9 @@ import ThemeChanger from "./components/ThemeChanger";
 import config from "./config";
 import moment from "moment";
 import Details from "./components/Details";
-import Skill from "./components/Skill";
+import TechStack from "./components/TechStack";
 import Experience from "./components/Experience";
+import Skill from "./components/Skills";
 import Drawings from "./components/Drawings";
 import Education from "./components/Education";
 import Project from "./components/Project";
@@ -60,7 +61,6 @@ function App() {
         let query = `user:${config.github.username}+fork:${!config.github
           .exclude.forks}${excludeRepo}`;
         let url = `https://api.github.com/search/repositories?q=${query}&sort=${config.github.sortBy}&per_page=${config.github.limit}&type=Repositories`;
-        console.log(url);
         axios
           .get(url, {
             headers: {
@@ -69,7 +69,6 @@ function App() {
           })
           .then((response) => {
             let data = response.data;
-            console.log(data);
             setRepo(data.items);
           })
           .catch((error) => {
@@ -79,19 +78,18 @@ function App() {
       .catch((error) => {
         handleError(error);
       })
-      // .then(() => {
-      //   axios
-      //     .get("https://www.sketchyactivity.com/api/portfolio", {
-      //       headers: {
-      //         Authorization: `Token ${config.sketchyactivity.token}`,
-      //       },
-      //     })
-      //     .then((response) => {
-      //       console.log(response);
-      //       setDrawings(response.data);
-      //     })
-      //     .catch((error) => console.log(error));
-      // })
+      .then(() => {
+        axios
+          .get("https://www.sketchyactivity.com/api/portfolio", {
+            headers: {
+              Authorization: `Token ${config.sketchyactivity.token}`,
+            },
+          })
+          .then((response) => {
+            setDrawings(response.data);
+          })
+          .catch((error) => console.log(error));
+      })
       .finally(() => {
         setLoading(false);
       });
@@ -169,13 +167,15 @@ function App() {
                     {!config.themeConfig.disableSwitch && <ThemeChanger />}
                     <AvatarCard profile={profile} />
                     <Details profile={profile} />
-                    <Skill />
+                    <TechStack />
+                    <Skill></Skill>
                     <Experience />
                     <Education />
                   </div>
                 </div>
                 <div className="lg:col-span-2 col-span-1">
                   <div className="grid grid-cols-1 gap-6">
+                    <Drawings drawings={drawings}></Drawings>
                     <Website />
                     <Project repo={repo} />
                     <Blog />
