@@ -10,15 +10,18 @@ const Tabs = (props) => {
             className="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row"
             role="tablist"
           >
-            {Object.keys(props.options).map((key, index) => {
+            {props.options.map((item, index) => {
               return (
-                <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+                <li
+                  key={index}
+                  className="-mb-px mr-2 last:mr-0 flex-auto text-center"
+                >
                   <a
                     className={
                       "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal  text-base-content" +
                       (openTab === index + 1
-                        ? "bg-primary"
-                        : "text-white bg-base-100")
+                        ? " bg-primary"
+                        : " text-white bg-base-100")
                     }
                     onClick={(e) => {
                       e.preventDefault();
@@ -28,7 +31,7 @@ const Tabs = (props) => {
                     href={"#" + props.name + "-tab-" + index}
                     role="tablist"
                   >
-                    {key.toString()}
+                    {item.title.toString()}
                   </a>
                 </li>
               );
@@ -37,13 +40,13 @@ const Tabs = (props) => {
           <div className="relative flex flex-col min-w-0 break-words bg-base-100 w-full mb-6 shadow-lg rounded">
             <div className="px-4 py-5 flex-auto">
               <div className="tab-content tab-space">
-                {Object.keys(props.options).map((key, index) => {
+                {props.options.map((item, index) => {
                   return (
                     <div
                       className={openTab === index + 1 ? "block" : "hidden"}
                       id={props.name + "-tab-" + index}
                     >
-                      {props.options[key]}
+                      {item.body}
                     </div>
                   );
                 })}

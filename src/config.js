@@ -59,20 +59,38 @@ module.exports = {
     "Icinga 2",
     "nuXmv",
     "Google Colaboratory",
-    "webGME (web-based generic modeling environment)",
   ],
 
   skills: {
-    soft: [
+    "Currently Learning": [
+      "Machine learning",
+      "Metaprogramming",
+      "webGME (web-based generic modeling environment)",
+      "Domain-specific modeling languages",
+      "Modeling language engineering",
+    ],
+
+    Soft: [
       "Training/Demos",
       "Resourcefulness",
       "Problem solving",
       "Multitasking",
+      "Time management",
       "Customer service",
       "Written communication",
       "Verbal communication",
+      "Organization",
     ],
-    hard: ["Software architecture modeling", "UML", "Software documentation"],
+    Hard: [
+      "Software architecture modeling",
+      "Universal Modeling Language",
+      "Software documentation",
+      "Front-end web development",
+      "Back-end web development",
+      "Full stack web development",
+      "Systems integration",
+      "Troubleshooting/problem-solving",
+    ],
   },
   web_portfolio: {
     title:
