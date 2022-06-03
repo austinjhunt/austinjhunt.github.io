@@ -40,7 +40,6 @@ const Drawings = (props) => {
   };
 
   let ArtGallery = (drawings) => {
-    console.log(drawings);
     return (
       <div className="w-full flex-wrap">
         {drawings.map((d, index) => (
