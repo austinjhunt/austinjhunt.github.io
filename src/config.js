@@ -51,6 +51,10 @@ module.exports = {
     "Nagios/NCPA",
     "Icinga 2",
     "nuXmv",
+    "Software architecture modeling",
+    "UML",
+    "Google Colaboratory",
+    "webGME (web-based generic modeling environment)",
   ],
   web_portfolio: {
     title:
