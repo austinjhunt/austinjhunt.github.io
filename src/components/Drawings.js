@@ -43,7 +43,7 @@ const Drawings = (props) => {
     return (
       <div className="w-full flex-wrap">
         {drawings.map((d, index) => (
-          <div key={index} className="inline-flex w-7 h-7 hover:w-12 ">
+          <div key={index} className="inline-flex  hover:w-12 ">
             <img
               className="w-full h-full"
               src={`${d.s3_copied_smaller_drawing_private_url}`}
@@ -60,7 +60,7 @@ const Drawings = (props) => {
         <div className="card shadow-lg compact bg-base-100">
           <div className="card-body">
             <h5 className="card-title mb-6">
-              <span className="opacity-70">Art</span>
+              <span className="opacity-70">Recent Portraiture</span>
             </h5>
             {loading || props.drawings.length == 0
               ? renderSkeleton()

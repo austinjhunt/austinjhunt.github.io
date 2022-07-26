@@ -80,7 +80,7 @@ function App() {
       })
       .then(() => {
         axios
-          .get("https://www.sketchyactivity.com/api/portfolio", {
+          .get("https://www.sketchyactivity.com/api/portfolio?limit=1", {
             headers: {
               Authorization: `Token ${config.sketchyactivity.token}`,
             },
