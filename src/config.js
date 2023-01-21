@@ -20,7 +20,7 @@ module.exports = {
     facebook: "",
     dribbble: "",
     behance: "",
-    medium: "",
+    medium: "austinjhunt",
     devto: "",
     website: "https://austinjhunt.com",
     art: "https://www.sketchyactivity.com",
@@ -201,7 +201,7 @@ module.exports = {
       institution: "Vanderbilt University",
       degree: "Master of Science, Computer Science",
       from: "May 2021",
-      to: "Present",
+      to: "December 2022",
     },
     {
       institution: "College of Charleston Honors College",
@@ -212,9 +212,9 @@ module.exports = {
   ],
   blog: {
     // Display blog posts from your medium or dev.to account. (Optional)
-    source: "dev.to", // medium | dev.to
+    source: "medium", // medium | dev.to
     username: "austinjhunt",
-    limit: 3, // How many posts to display. Max is 10.
+    limit: 5, // How many posts to display. Max is 10.
   },
   googleAnalytics: {
     // GA3 tracking id/GA4 tag id UA-XXXXXXXXX-X | G-XXXXXXXXXX
