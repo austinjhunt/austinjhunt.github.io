@@ -1,15 +1,15 @@
 {
-  "name": "@arifszn/gitprofile",
-  "description": "Create an automatic portfolio based on GitHub profile",
-  "version": "2.3.0",
+  "name": "austinjhunt",
+  "description": "Austin J Hunt: art and code",
+  "version": "1.0.0",
   "license": "MIT",
-  "author": "arifszn",
+  "author": "austinjhunt",
   "repository": {
     "type": "git",
-    "url": "https://github.com/arifszn/gitprofile.git"
+    "url": "https://github.com/austinjhunt/austinjhunt.github.io.git"
   },
   "bugs": {
-    "url": "https://github.com/arifszn/gitprofile/issues"
+    "url": "https://github.com/austinjhunt/austinjhunt.github.io.git/issues"
   },
   "files": [
     "dist/gitprofile.es.js",
