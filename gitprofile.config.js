@@ -45,7 +45,7 @@ const config = {
     'PHP',
     'HTML 5',
     'CSS, SASS, SCSS',
-    'Bootstrap (2-5)',
+    'Bootstrap',
     'Git, GitHub',
     'GitHub Actions',
     'Linux',
