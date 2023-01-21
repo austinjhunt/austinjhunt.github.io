@@ -43,7 +43,7 @@ const Drawings = ({ drawings, loading }) => {
     return (
       <div className="w-full flex-wrap">
         {drawings.map((d, index) => (
-          <div key={index} className="inline-flex  hover:w-12 ">
+          <div key={index} className="inline-flex w-64">
             <img
               className="w-full h-full"
               src={`${d.s3_copied_smaller_drawing_private_url}`}
