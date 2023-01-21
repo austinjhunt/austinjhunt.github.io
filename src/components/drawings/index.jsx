@@ -62,9 +62,9 @@ const Drawings = ({ drawings, loading }) => {
             <h5 className="card-title mb-6">
               <span className="opacity-70">Recent Portraiture</span>
             </h5>
-            {loading || props.drawings.length == 0
+            {loading || drawings.length == 0
               ? renderSkeleton()
-              : ArtGallery(props.drawings)}
+              : ArtGallery(drawings)}
           </div>
         </div>
       }
