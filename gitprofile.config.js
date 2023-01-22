@@ -63,11 +63,11 @@ const config = {
 
   skills: {
     'Currently Learning': [
-      'Machine learning',
-      'Metaprogramming',
-      'webGME (web-based generic modeling environment)',
-      'Domain-specific modeling languages',
-      'Modeling language engineering',
+      'React',
+      'Ellucian Ethos Integration API',
+      'GraphQL',
+      'Insomnia',
+      'Qualtrics SSO Config',
     ],
 
     Soft: [
@@ -82,6 +82,10 @@ const config = {
       'Organization',
     ],
     Hard: [
+      'Machine learning',
+      'Metaprogramming',
+      'Metamodeling',
+      'Domain-specific modeling languages (DSMLs)',
       'Software architecture modeling',
       'Universal Modeling Language',
       'Software documentation',
@@ -90,6 +94,8 @@ const config = {
       'Full stack web development',
       'Systems integration',
       'Troubleshooting/problem-solving',
+      'Quantum programming (qiskit)',
+      'Automated verification / Formal verification / symbolic model checking (nuXmv)',
     ],
   },
   web_portfolio: {
@@ -232,6 +238,30 @@ const config = {
 
   // To hide the `My Projects` section, keep it empty.
   externalProjects: [
+    {
+      title: 'Go365 Migrator',
+      description:
+        'A free research tool turning arXiv into something much more social, interactive, searchable, and personalized, leveraging multiple cloud resources for high performance and scalability. Built in collaboration with John D. Cobb (https://johndcobb.github.io/)',
+      imageUrl: '/img/web_portfolio/go365.png',
+      link: 'https://www.youtube.com/watch?v=-CzWWTQKGDY',
+      tech: [
+        'Django',
+        'Python',
+        'Microsoft Authentication Library (MSAL)',
+        'Azure AD',
+        'Google OAuth',
+        'OpenID Connect',
+        'AWS',
+        'Git/GitHub',
+        'GitHub Actions',
+        'Linode',
+        'Multithreading (concurrent.futures)',
+        'Google Drive API v3',
+        'SharePoint App-Only Authentication',
+        'MS Graph API',
+      ],
+    },
+
     {
       title: 'arXiva',
       description:
