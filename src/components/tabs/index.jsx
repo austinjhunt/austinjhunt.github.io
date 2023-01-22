@@ -19,9 +19,7 @@ const Tabs = (props) => {
                   <a
                     className={
                       'text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal  text-base-content' +
-                      (openTab === index + 1
-                        ? ' bg-primary'
-                        : ' text-white bg-base-100')
+                      (openTab === index + 1 ? ' bg-primary' : ' bg-base-100')
                     }
                     onClick={(e) => {
                       e.preventDefault();
