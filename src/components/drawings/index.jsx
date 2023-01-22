@@ -43,9 +43,9 @@ const Drawings = ({ drawings, loading }) => {
     return (
       <div className="w-full flex-wrap">
         {drawings.map((d, index) => (
-          <div key={index} className="inline-flex w-64">
+          <div key={index} className="inline-flex w-64 h-72">
             <img
-              className="w-full h-full"
+              className=" h-full"
               src={`${d.s3_copied_smaller_drawing_private_url}`}
             ></img>
           </div>
@@ -60,7 +60,12 @@ const Drawings = ({ drawings, loading }) => {
         <div className="card shadow-lg compact bg-base-100">
           <div className="card-body">
             <h5 className="card-title mb-6">
-              <span className="opacity-70">Recent Portraiture</span>
+              <span className="opacity-70">
+                Recent Portraiture from{' '}
+                <a href="https://sketchyactivity.com" target={'_blank'}>
+                  sketchyactivity.com
+                </a>
+              </span>
             </h5>
             {loading || drawings.length == 0
               ? renderSkeleton()
