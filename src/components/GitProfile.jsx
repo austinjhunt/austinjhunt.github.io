@@ -118,7 +118,6 @@ const GitProfile = ({ config }) => {
             }
           )
           .then((response) => {
-            console.log(response.data);
             setDrawings(response.data);
           })
           .catch((error) => console.log(error));
