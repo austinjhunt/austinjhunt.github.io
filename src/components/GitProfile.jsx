@@ -109,12 +109,16 @@ const GitProfile = ({ config }) => {
       })
       .then(() => {
         axios
-          .get('https://www.sketchyactivity.com/api/portfolio?limit=4', {
-            headers: {
-              Authorization: `Token ${config.sketchyactivity.token}`,
-            },
-          })
+          .get(
+            `https://www.sketchyactivity.com/api/portfolio?limit=${config.sketchyactivity.limit}`,
+            {
+              headers: {
+                Authorization: `Token ${config.sketchyactivity.token}`,
+              },
+            }
+          )
           .then((response) => {
+            console.log(response.data);
             setDrawings(response.data);
           })
           .catch((error) => console.log(error));

@@ -12,6 +12,7 @@ const config = {
   },
   sketchyactivity: {
     token: '52cdcc726dabfbe7356dc273f2f5a238f6d40c10',
+    limit: 6,
   },
   social: {
     linkedin: 'huntaj',

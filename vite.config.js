@@ -15,4 +15,7 @@ export default defineConfig({
       plugins: [tailwind(tailwindConfig), autoprefixer],
     },
   },
+  server: {
+    port: 3000,
+  },
 });

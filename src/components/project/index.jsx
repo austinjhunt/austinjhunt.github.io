@@ -3,6 +3,7 @@ import { AiOutlineStar, AiOutlineFork } from 'react-icons/ai';
 import PropTypes from 'prop-types';
 import { ga, languageColor, skeleton } from '../../helpers/utils';
 import { MdInsertLink } from 'react-icons/md';
+import { FaGithub } from 'react-icons/fa';
 
 const Project = ({ repo, loading, github, googleAnalytics }) => {
   if (!loading && Array.isArray(repo) && repo.length === 0) {
@@ -134,9 +135,11 @@ const Project = ({ repo, loading, github, googleAnalytics }) => {
                     {loading ? (
                       skeleton({ width: 'w-40', height: 'h-8' })
                     ) : (
-                      <span className="text-base-content opacity-70">
-                        GitHub Projects
-                      </span>
+                      <>
+                        <span className="text-base-content opacity-70">
+                          GitHub Projects
+                        </span>
+                      </>
                     )}
                   </h5>
                   {loading ? (
@@ -146,11 +149,14 @@ const Project = ({ repo, loading, github, googleAnalytics }) => {
                       href={`https://github.com/${github.username}?tab=repositories`}
                       target="_blank"
                       rel="noreferrer"
-                      className="text-base-content opacity-50"
+                      className="text-base-content opacity-50 ml-auto"
                     >
                       See All
                     </a>
                   )}
+                  <span className="ml-auto">
+                    <FaGithub size={'3em'}></FaGithub>
+                  </span>
                 </div>
                 <div className="col-span-2">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
