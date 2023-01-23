@@ -2,20 +2,12 @@ import { skeleton } from '../../helpers/utils';
 import { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
-const ListItem = ({ year, name, body, link }) => (
-  <li className="mb-5 ml-4">
-    <div
-      className="absolute w-2 h-2 bg-base-300 rounded-full border border-base-300 mt-1.5"
-      style={{ left: '-4.5px' }}
-    ></div>
-    <div className="my-0.5 text-xs">{year}</div>
-    <div className="font-semibold">
-      <a href={link} target="_blank" rel="noreferrer">
-        {name}
-      </a>
-    </div>
-    <h3 className="mb-4 font-normal">{body}</h3>
-  </li>
+const CertItem = ({ year, name, body, link }) => (
+  <div className="font-semibold badge-primary p-3 rounded w-fit m-3 inline-flex">
+    <a href={link} target="_blank" rel="noreferrer">
+      {year} - {name}
+    </a>
+  </div>
 );
 
 const Certification = ({ certifications, loading }) => {
@@ -23,7 +15,7 @@ const Certification = ({ certifications, loading }) => {
     let array = [];
     for (let index = 0; index < 2; index++) {
       array.push(
-        <ListItem
+        <CertItem
           key={index}
           year={skeleton({
             width: 'w-5/12',
@@ -53,19 +45,19 @@ const Certification = ({ certifications, loading }) => {
                   skeleton({ width: 'w-32', height: 'h-8' })
                 ) : (
                   <span className="text-base-content opacity-70">
-                    Certification
+                    Certifications
                   </span>
                 )}
               </h5>
             </div>
             <div className="text-base-content text-opacity-60">
-              <ol className="relative border-l border-base-300 border-opacity-30 my-2 mx-4">
+              <div className="relative border-l border-base-300 border-opacity-30 my-2 mx-4">
                 {loading ? (
                   renderSkeleton()
                 ) : (
                   <Fragment>
                     {certifications.map((certification, index) => (
-                      <ListItem
+                      <CertItem
                         key={index}
                         year={`${certification.year}`}
                         name={certification.name}
@@ -75,7 +67,7 @@ const Certification = ({ certifications, loading }) => {
                     ))}
                   </Fragment>
                 )}
-              </ol>
+              </div>
             </div>
           </div>
         </div>
@@ -84,7 +76,7 @@ const Certification = ({ certifications, loading }) => {
   );
 };
 
-ListItem.propTypes = {
+CertItem.propTypes = {
   year: PropTypes.node,
   name: PropTypes.node,
   body: PropTypes.node,

@@ -680,14 +680,26 @@ const config = {
       companyLink: 'https://cofc.edu',
     },
   ],
-  /* certifications: [
+  certifications: [
     {
-      name: 'Lorem ipsum',
-      body: 'Lorem ipsum dolor sit amet',
-      year: 'March 2022',
-      link: 'https://example.com'
+      name: 'DCA - Docker Certified Associate',
+      body: '',
+      year: 'January 2021',
+      link: '/docs/certs/dca.pdf',
     },
-  ], */
+    {
+      name: 'PCAP - Certified Associate in Python Programming',
+      body: '',
+      year: 'May 2020',
+      link: '/docs/certs/pcap.pdf',
+    },
+    {
+      name: 'PCEP - Certified Entry-Level Python Programmer',
+      body: '',
+      year: 'May 2020',
+      link: '/docs/certs/pcep.pdf',
+    },
+  ],
   education: [
     {
       institution: 'Vanderbilt University',
