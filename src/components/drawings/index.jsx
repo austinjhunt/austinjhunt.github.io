@@ -8,37 +8,13 @@ const Drawings = ({ drawings, loading }) => {
     return <></>;
   }
   const renderSkeleton = () => {
-    let array = [];
-    for (let index = 0; index < 2; index++) {
-      array.push(
-        <li key={index}>
-          <span>
-            {skeleton({ width: 'w-2', height: 'h-2', className: 'mr-2' })}
-            <div className="w-full">
-              <div className="block justify-between">
-                <div>
-                  {skeleton({
-                    width: 'w-9/12',
-                    height: 'h-4',
-                    className: 'mb-2',
-                  })}
-                </div>
-                <div>
-                  {skeleton({
-                    width: 'w-6/12',
-                    height: 'h-4',
-                    className: 'mb-2',
-                  })}
-                </div>
-              </div>
-              <div>{skeleton({ width: 'w-6/12', height: 'h-3' })}</div>
-            </div>
-          </span>
-        </li>
-      );
-    }
-
-    return array;
+    return (
+      <div class="text-center mx-auto px-8">
+        <div class="mt-3 text-base-content text-opacity-60 font-mono">
+          No art fetched yet.
+        </div>
+      </div>
+    );
   };
 
   const Carousel = () => {
@@ -133,21 +109,6 @@ const Drawings = ({ drawings, loading }) => {
             {sliderControl()}
           </div>
         </div>
-      </div>
-    );
-  };
-
-  let ArtGallery = (drawings) => {
-    return (
-      <div className="grid grid-cols-3 gap-4 content-center justify-center">
-        {drawings.map((d, index) => (
-          <div key={index} className="h-80 flex content-center justify-center">
-            <img
-              className="object-cover h-full rounded-md shadow-lg"
-              src={`${d.s3_copied_smaller_drawing_private_url}`}
-            ></img>
-          </div>
-        ))}
       </div>
     );
   };
