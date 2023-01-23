@@ -119,7 +119,7 @@ const config = {
           'Git/GitHub',
           'Tailwind CSS',
         ],
-        image: '/img/web_portfolio/gvl-tax-sales.png',
+        image: '/img/projects/gvl-tax-sales.png',
       },
       {
         name: 'arXiva',
@@ -138,7 +138,7 @@ const config = {
           'AWS Eventbridge',
           'Jenkins',
         ],
-        image: '/img/web_portfolio/arxiva.png',
+        image: '/img/projects/arxiva.png',
       },
       {
         name: 'sketchyactivity',
@@ -158,7 +158,7 @@ const config = {
           'Bootstrap',
           'CSS',
         ],
-        image: '/img/web_portfolio/sketchyactivity.png',
+        image: '/img/projects/sketchyactivity.png',
       },
       {
         name: 'PolyDoc - simultaneously manage many documents',
@@ -179,7 +179,7 @@ const config = {
           'Google Drive API',
           'PDF2Image',
         ],
-        image: '/img/web_portfolio/polydoc.png',
+        image: '/img/projects/polydoc.png',
       },
     ],
   },
@@ -245,7 +245,7 @@ const config = {
       title: 'Go365 Migrator',
       description:
         'A free research tool turning arXiv into something much more social, interactive, searchable, and personalized, leveraging multiple cloud resources for high performance and scalability. Built in collaboration with John D. Cobb (https://johndcobb.github.io/)',
-      imageUrl: '/img/web_portfolio/go365.png',
+      imageUrl: '/img/projects/go365.png',
       link: 'https://www.youtube.com/watch?v=-CzWWTQKGDY',
       tech: [
         'Django',
@@ -264,12 +264,38 @@ const config = {
         'MS Graph API',
       ],
     },
+    {
+      title:
+        'A Contextual Analysis of CRYSTALS-Dilithium, a Quantum-Resistant, Lattice-Based Digital Signature Scheme',
+      description:
+        'ABSTRACT - This paper presents an analysis of CRYSTALS-Dilithium, a novel algorithm for generating digital signatures that can withstand future cyberattacks from quantum computers. As announced in July 2022, CRYSTALS-Dilithium was one of the first four winners in the post-quantum cryptography (PQC) standardization project managed by The National Institute of Standards and Technology (NIST). NIST started this competition to call upon cryptographers across the globe for the creation and vetting of quantum-resistant encryption methods and standards in preparation for an inevitable future of quantum-computing-based assaults. As a member of the Cryptographic Suite for Algebraic Lattices (CRYSTALS), Dilithium is a lattice-based algorithm providing not only security based on the hardness of lattice problems, but also competitive public key compression and multiple efficient implementations. This paper includes an overview of the Dilithium scheme for quantum-resistant digital signatures and aggregates contextual information around deeper topics supporting its principal design aspects.',
+      imageUrl: '/img/projects/crystals-dilithium.png',
+      link: '/docs/vanderbilt/crystals-dilithium.pdf',
+      tech: [],
+    },
+    {
+      title:
+        'A Multi-Phase Tail Latency Analysis of Couchbase Server Using Automation and the Yahoo! Cloud Serving Benchmark',
+      description:
+        'ABSTRACT - As the production, storage, and analysis of data become increasingly integral to the success of modern businesses, and as data becomes increasingly kaleidoscopic due to the influx of new data sources, NoSQL (Not Only Structured Query Language) database systems are becoming a popular choice for data management because of their ability to quickly and scalably handle large volumes of structured, semi-structured, and unstructured data in a way that is friendly to developers, and more broadly, to change. One of the solutions in this arena is Couchbase Server, an open source database software package for building and managing distributed, document-oriented, multi-model NoSQL databases optimized for modern interactive applications. In this paper, we provide a detailed, two-phase tail latency analysis of Couchbase Server Community Edition v7.0 using a custom automated testing framework built with the Couchbase CLI and Couchbase Python 3 SDK in combination with the Yahoo! Cloud Serving Benchmark (YCSB), a robust and open source framework for analyzing the performance of different “key-value” and “cloud” serving stores like Couchbase. We analyze and report on relationships between tail latencies and dataset sizes, request distributions, ratios between various operation types (read/insert/update), and cluster architecture (homogeneous versus heterogeneous service layouts).',
+      imageUrl: '/img/projects/couchbase-5287.png',
+      link: '/docs/vanderbilt/couchbase-5287.pdf',
+      tech: [],
+    },
+    {
+      title: 'Threat Modeling My Online Identity',
+      description:
+        'Using the CIA (confidentiality, integrity, availability) methodology to model threats to my online identity. I’ve broken the model into the key components of value that make up my online identity, ranging from personal websites and eCommerce websites to social media accounts, emails, and accounts linked to payment methods. For many online services, enabling MFA is an obvious preventative measure.',
+      imageUrl: '/img/projects/threatmodel-online-identity.png',
+      link: '/docs/vanderbilt/threatmodel-online-identity.pdf',
+      tech: [],
+    },
 
     {
       title: 'arXiva',
       description:
         'A free research tool turning arXiv into something much more social, interactive, searchable, and personalized, leveraging multiple cloud resources for high performance and scalability. Built in collaboration with John D. Cobb (https://johndcobb.github.io/)',
-      imageUrl: '/img/web_portfolio/arxiva.png',
+      imageUrl: '/img/projects/arxiva.png',
       link: 'https://arxiva.org',
       tech: [
         'ElasticSearch',
@@ -287,7 +313,7 @@ const config = {
       title: 'sketchyactivity.com',
       description:
         'Personal portraiture portfolio, built with Django, deployed with Docker, GitHub Actions, and Linode, and integrated with Slack and AWS S3 for pageview notifications and image file storage',
-      imageUrl: '/img/web_portfolio/sketchyactivity.png',
+      imageUrl: '/img/projects/sketchyactivity.png',
       link: 'https://sketchyactivity.com',
       tech: [
         'Django',
