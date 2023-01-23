@@ -13,6 +13,7 @@ import Project from './project';
 import Blog from './blog';
 import Drawings from './drawings';
 import Footer from './footer';
+import Technology from './tech';
 import {
   genericError,
   getInitialTheme,
@@ -195,6 +196,10 @@ const GitProfile = ({ config }) => {
                         github={sanitizedConfig.github}
                         social={sanitizedConfig.social}
                       />
+                      <Technology
+                        loading={loading}
+                        technology={sanitizedConfig.technology}
+                      ></Technology>
                       <Skill
                         loading={loading}
                         skills={sanitizedConfig.skills}
@@ -286,6 +291,12 @@ GitProfile.propTypes = {
       degree: PropTypes.string,
       fileUrl: PropTypes.string,
     }),
+    technology: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string,
+        tags: PropTypes.arrayOf(PropTypes.string),
+      })
+    ),
     skills: PropTypes.shape({
       Hard: PropTypes.array,
       Soft: PropTypes.array,

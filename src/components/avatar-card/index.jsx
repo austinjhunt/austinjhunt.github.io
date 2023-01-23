@@ -9,7 +9,6 @@ const AvatarCard = ({
   resume,
   degree_portfolio,
 }) => {
-  console.log(degree_portfolio);
   return (
     <div className="card shadow-lg compact bg-base-100">
       <div className="grid place-items-center py-8">
@@ -62,7 +61,7 @@ const AvatarCard = ({
               : profile.bio}
           </div>
         </div>
-        <div>
+        <div className="text-center">
           {resume?.fileUrl &&
             (loading ? (
               <div className="mt-6">
@@ -72,7 +71,7 @@ const AvatarCard = ({
               <a
                 href={resume.fileUrl}
                 target="_blank"
-                className="btn btn-outline btn-sm text-xs mt-6 opacity-50 mx-2"
+                className="btn btn-outline btn-sm text-xs mt-6 opacity-70 mx-2  p-2"
                 download
                 rel="noreferrer"
               >
@@ -89,7 +88,7 @@ const AvatarCard = ({
               <a
                 href={degree_portfolio.fileUrl}
                 target="_blank"
-                className="btn btn-outline btn-sm text-xs mt-6 opacity-50 mx-2"
+                className="btn btn-outline btn-sm text-xs mt-6 opacity-70 mx-2 p-2"
                 download
                 rel="noreferrer"
               >

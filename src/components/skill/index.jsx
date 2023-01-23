@@ -1,6 +1,6 @@
 import { skeleton } from '../../helpers/utils';
 import PropTypes from 'prop-types';
-import { FaToolbox } from 'react-icons/fa';
+import { FaRegLightbulb } from 'react-icons/fa';
 import Tabs from '../tabs';
 
 const Skill = ({ loading, skills }) => {
@@ -57,7 +57,7 @@ const Skill = ({ loading, skills }) => {
                   )}
                 </h5>
                 <span className="ml-auto">
-                  <FaToolbox size={'4em'}></FaToolbox>
+                  <FaRegLightbulb size={'4em'}></FaRegLightbulb>
                 </span>
               </div>
               <Tabs name={'skilltypes'} options={options} color="pink"></Tabs>
