@@ -187,7 +187,10 @@ const config = {
   resume: {
     fileUrl: '/docs/resume.pdf', // Empty fileUrl will hide the `Download Resume` button.
   },
-
+  degree_portfolio: {
+    degree: 'M.S. Computer Science',
+    fileUrl: '/docs/vanderbilt/ms-portfolio.pdf',
+  },
   experiences: [
     {
       company: 'College of Charleston',
