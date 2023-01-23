@@ -19,6 +19,8 @@ const ListItem = ({ time, position, company, companyLink }) => (
 );
 
 const Experience = ({ experiences, loading }) => {
+  // don't wait for API responses since these are stored locally.
+  loading = false;
   const renderSkeleton = () => {
     let array = [];
     for (let index = 0; index < 2; index++) {

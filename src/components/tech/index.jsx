@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { FaToolbox } from 'react-icons/fa';
 
 const Technology = ({ loading, technology }) => {
+  // don't wait for API responses since these are stored locally.
+  loading = false;
   let stringifyTags = (techItem) => {
     return (
       techItem.tags.join('---').replaceAll(' ', '---').toLowerCase() +

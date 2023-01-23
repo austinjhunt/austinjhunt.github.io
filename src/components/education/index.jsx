@@ -17,6 +17,8 @@ const ListItem = ({ time, degree, institution, gpa }) => (
 );
 
 const Education = ({ loading, education }) => {
+  // don't wait for API responses since these are stored locally.
+  loading = false;
   const renderSkeleton = () => {
     let array = [];
     for (let index = 0; index < 2; index++) {
