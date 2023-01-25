@@ -161,9 +161,11 @@ export const sanitizeConfig = (config) => {
     resume: {
       fileUrl: config?.resume?.fileUrl || '',
     },
-    degree_portfolio: {
-      degree: config?.degree_portfolio?.degree || '',
-      fileUrl: config?.degree_portfolio?.fileUrl || '',
+    degree: {
+      name: config?.degree?.name || '',
+      school: config?.degree?.school || '',
+      degreeFileUrl: config?.degree?.degreeFileUrl || '',
+      portfolioFileUrl: config?.degree?.portfolioFileUrl || '',
     },
     technology: config?.technology || [],
     skills: config?.skills || { Hard: [], Soft: [], 'Currently Learning': [] },

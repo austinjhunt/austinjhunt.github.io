@@ -188,7 +188,7 @@ const GitProfile = ({ config }) => {
                         loading={loading}
                         avatarRing={!sanitizedConfig.themeConfig.hideAvatarRing}
                         resume={sanitizedConfig.resume}
-                        degree_portfolio={sanitizedConfig.degree_portfolio}
+                        degree={sanitizedConfig.degree}
                       />
                       <Details
                         profile={profile}
@@ -287,9 +287,11 @@ GitProfile.propTypes = {
     resume: PropTypes.shape({
       fileUrl: PropTypes.string,
     }),
-    degree_portfolio: PropTypes.shape({
-      degree: PropTypes.string,
-      fileUrl: PropTypes.string,
+    degree: PropTypes.shape({
+      name: PropTypes.string,
+      school: PropTypes.string,
+      portfolioFileUrl: PropTypes.string,
+      degreeFileUrl: PropTypes.string,
     }),
     technology: PropTypes.arrayOf(
       PropTypes.shape({

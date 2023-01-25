@@ -653,9 +653,11 @@ const config = {
   resume: {
     fileUrl: '/docs/resume.pdf', // Empty fileUrl will hide the `Download Resume` button.
   },
-  degree_portfolio: {
-    degree: 'M.S. Computer Science',
-    fileUrl: '/docs/vanderbilt/ms-portfolio.pdf',
+  degree: {
+    portfolioFileUrl: '/docs/vanderbilt/ms-portfolio.pdf',
+    name: 'M.S. C.S.',
+    degreeFileUrl: '/docs/vanderbilt/ms-cs-degree.pdf',
+    school: '',
   },
   experiences: [
     {
@@ -702,7 +704,7 @@ const config = {
   ],
   education: [
     {
-      institution: 'Vanderbilt University',
+      institution: 'Vanderbilt University School of Engineering',
       degree: 'Master of Science, Computer Science',
       from: 'May 2021',
       to: 'December 2022',

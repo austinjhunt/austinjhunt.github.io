@@ -2,13 +2,7 @@ import PropTypes from 'prop-types';
 import { fallbackImage, skeleton } from '../../helpers/utils';
 import LazyImage from '../lazy-image';
 
-const AvatarCard = ({
-  profile,
-  loading,
-  avatarRing,
-  resume,
-  degree_portfolio,
-}) => {
+const AvatarCard = ({ profile, loading, avatarRing, resume, degree }) => {
   return (
     <div className="card shadow-lg compact bg-base-100">
       <div className="grid place-items-center py-8">
@@ -79,20 +73,37 @@ const AvatarCard = ({
               </a>
             ))}
 
-          {degree_portfolio?.fileUrl &&
+          {degree?.portfolioFileUrl &&
             (loading ? (
               <div className="mt-6">
                 {skeleton({ width: 'w-40', height: 'h-8' })}
               </div>
             ) : (
               <a
-                href={degree_portfolio.fileUrl}
+                href={degree.portfolioFileUrl}
                 target="_blank"
                 className="btn btn-outline btn-sm text-xs mt-6 opacity-70 mx-2 p-2"
                 download
                 rel="noreferrer"
               >
-                Download {degree_portfolio.degree} Portfolio
+                Download {degree.name} Portfolio
+              </a>
+            ))}
+
+          {degree?.degreeFileUrl &&
+            (loading ? (
+              <div className="mt-6">
+                {skeleton({ width: 'w-40', height: 'h-8' })}
+              </div>
+            ) : (
+              <a
+                href={degree.degreeFileUrl}
+                target="_blank"
+                className="btn btn-outline btn-sm text-xs mt-6 opacity-70 mx-2 p-2"
+                download
+                rel="noreferrer"
+              >
+                Download {degree.school} {degree.name} Digital Degree
               </a>
             ))}
         </div>
@@ -108,9 +119,11 @@ AvatarCard.propTypes = {
   resume: PropTypes.shape({
     fileUrl: PropTypes.string,
   }),
-  degree_portfolio: PropTypes.shape({
-    fileUrl: PropTypes.string,
-    degree: PropTypes.string,
+  degree: PropTypes.shape({
+    name: PropTypes.string,
+    school: PropTypes.string,
+    portfolioFileUrl: PropTypes.string,
+    degreeFileUrl: PropTypes.string,
   }),
 };
 
