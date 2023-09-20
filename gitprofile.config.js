@@ -533,8 +533,7 @@ const config = {
       'React',
       'Ellucian Ethos Integration API',
       'GraphQL',
-      'Insomnia',
-      'Qualtrics SSO Config',
+      'Insomnia', 
     ],
 
     Soft: [
@@ -722,9 +721,31 @@ const config = {
   // To hide the `My Projects` section, keep it empty.
   externalProjects: [
     {
+      title: 'edukona (startup) - est. Sept 2023',
+      description:
+        'Our startup offers AI-powered digital textbooks with interactive modules for CS courses. We facilitate seamless curriculum integration, affordable learning, and customizable pathways, with ready-to-use content and AI-assisted content creation.',
+      imageUrl: '',
+      link: 'http://edukona.com',
+      tech: [
+        'Django',
+        'Django REST Framework',
+        'JWT Authorization',
+        'Python',
+        'React',
+        'AWS Elastic Beanstalk',
+        'AWS RDS',
+        'AWS R53',
+        'Git/GitHub',
+        'GitHub Actions', 
+        'Postgres', 
+        'Postman Tests',
+        'Postman Monitors'
+      ],
+    },
+    {
       title: 'Go365 Migrator',
       description:
-        'A free research tool turning arXiv into something much more social, interactive, searchable, and personalized, leveraging multiple cloud resources for high performance and scalability. Built in collaboration with John D. Cobb (https://johndcobb.github.io/)',
+        'Multithreaded, configurable migration assistant for migrating files out of Google Drive into SharePoint. Built for College of Charleston\'s enterprise level file migration in light of new Google-enforced storage quotas.',
       imageUrl: '/img/projects/go365.png',
       link: 'https://www.youtube.com/watch?v=-CzWWTQKGDY',
       tech: [
