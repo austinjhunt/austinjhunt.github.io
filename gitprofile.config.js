@@ -729,7 +729,7 @@ const config = {
     {
       title: 'edukona (startup) - est. Sept 2023',
       description:
-        'Our startup offers AI-powered digital textbooks with interactive modules for CS courses. We facilitate seamless curriculum integration, affordable learning, and customizable pathways, with ready-to-use content and AI-assisted content creation.',
+        'Our startup offers AI-powered digital textbooks with interactive modules for CS courses. We facilitate seamless curriculum integration, affordable learning, and customizable pathways, with ready-to-use content and AI-assisted content creation. Working in collaboration with Dr. Ayman Hajja (amhajja.com)',
       imageUrl: '',
       link: 'http://edukona.com',
       tech: [
