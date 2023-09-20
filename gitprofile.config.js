@@ -281,6 +281,10 @@ const config = {
       ],
     },
     {
+      name: 'Insomnia',
+      tags: ['testing', 'api', 'rest', 'monitoring', 'graphql'],
+    },
+    {
       name: 'JavaScript',
       tags: ['web', 'front end', 'back end', 'full stack', 'programming'],
     },
@@ -445,6 +449,10 @@ const config = {
       tags: ['programming', 'scripting', 'automation', 'windows'],
     },
     {
+      name: 'Postman',
+      tags: ['testing', 'api', 'rest', 'monitoring'],
+    }, 
+    {
       name: 'Python',
       tags: [
         'web',
@@ -531,9 +539,7 @@ const config = {
   skills: {
     'Currently Learning': [
       'React',
-      'Ellucian Ethos Integration API',
-      'GraphQL',
-      'Insomnia', 
+      'Ellucian Ethos Integration API',  
     ],
 
     Soft: [
