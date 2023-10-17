@@ -5,8 +5,8 @@ import { ga, languageColor, skeleton } from '../../helpers/utils';
 import { MdInsertLink } from 'react-icons/md';
 import { FaGithub } from 'react-icons/fa';
 
-const Project = ({ repo, loading, github, googleAnalytics }) => {
-  if (!loading && Array.isArray(repo) && repo.length === 0) {
+const RecentActivity = ({ data, loading, github, googleAnalytics }) => {
+  if (!loading && Array.isArray(data) && data.length === 0) {
     return <></>;
   }
 
@@ -15,7 +15,7 @@ const Project = ({ repo, loading, github, googleAnalytics }) => {
     for (let index = 0; index < github.limit; index++) {
       array.push(
         <div className="card shadow-lg compact bg-base-100" key={index}>
-          <div className="flex justify-between flex-col p-8 h-full w-full">
+          <div className="flex justify-between flex-col p-1 h-full w-full">
             <div>
               <div className="flex items-center">
                 <span>
@@ -59,12 +59,24 @@ const Project = ({ repo, loading, github, googleAnalytics }) => {
 
     return array;
   };
-
+  const formatCreatedAtString = (createdAt) => {
+    const date = new Date(createdAt);
+    const options = {
+      timeZone: 'America/New_York',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+    };
+    return `${date.toLocaleString('en-US', options)}`;
+  };
   const renderProjects = () => {
-    return repo.map((item, index) => (
+    return data.map((item, index) => (
       <a
-        className="card shadow-lg compact bg-base-100 cursor-pointer"
-        href={item.html_url}
+        className="card shadow-lg compact bg-base-100 cursor-pointer hover:bg-base-200"
+        href={`https://github.com/${item.repo.name}`}
         key={index}
         onClick={(e) => {
           e.preventDefault();
@@ -82,40 +94,21 @@ const Project = ({ repo, loading, github, googleAnalytics }) => {
             console.error(error);
           }
 
-          window?.open(item.html_url, '_blank');
+          window?.open(`https://github.com/${item.repo.name}`, '_blank');
         }}
       >
-        <div className="flex justify-between flex-col p-8 h-full w-full">
+        <div className="flex justify-between flex-col p-3 h-full w-full">
           <div>
             <div className="flex items-center">
-              <div className="card-title text-lg tracking-wide flex text-base-content opacity-60">
-                <MdInsertLink className="my-auto" />
-                <span>{item.name}</span>
+              <div className="card-title text-sm tracking-wide flex  opacity-60">
+                <p>
+                  <span className="font-bold">{item.type}</span> on{' '}
+                  <span className="font-bold">{item.repo.name}</span> at{' '}
+                  <span className="font-bold">
+                    {formatCreatedAtString(item.created_at)}
+                  </span>
+                </p>
               </div>
-            </div>
-            <p className="mb-5 mt-1 text-base-content text-opacity-60 text-sm">
-              {item.description}
-            </p>
-          </div>
-          <div className="flex justify-between text-sm text-base-content text-opacity-60 truncate">
-            <div className="flex flex-grow">
-              <span className="mr-3 flex items-center">
-                <AiOutlineStar className="mr-0.5" />
-                <span>{item.stargazers_count}</span>
-              </span>
-              <span className="flex items-center">
-                <AiOutlineFork className="mr-0.5" />
-                <span>{item.forks_count}</span>
-              </span>
-            </div>
-            <div>
-              <span className="flex items-center">
-                <div
-                  className="w-3 h-3 rounded-full mr-1 opacity-60"
-                  style={{ backgroundColor: languageColor(item.language) }}
-                />
-                <span>{item.language}</span>
-              </span>
             </div>
           </div>
         </div>
@@ -137,30 +130,18 @@ const Project = ({ repo, loading, github, googleAnalytics }) => {
                     ) : (
                       <>
                         <span className="text-base-content opacity-70">
-                          GitHub Projects I Own
+                          Recent Contributions
                         </span>
                       </>
                     )}
                   </h5>
-                  {loading ? (
-                    skeleton({ width: 'w-10', height: 'h-5' })
-                  ) : (
-                    <a
-                      href={`https://github.com/${github.username}?tab=repositories`}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-base-content opacity-50 ml-auto"
-                    >
-                      See All
-                    </a>
-                  )}
                   <span className="ml-auto">
                     <FaGithub size={'3em'}></FaGithub>
                   </span>
                 </div>
                 <div className="col-span-2">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {loading || !repo ? renderSkeleton() : renderProjects()}
+                  <div className="grid grid-cols-1 gap-6">
+                    {loading || !data ? renderSkeleton() : renderProjects()}
                   </div>
                 </div>
               </div>
@@ -172,11 +153,11 @@ const Project = ({ repo, loading, github, googleAnalytics }) => {
   );
 };
 
-Project.propTypes = {
-  repo: PropTypes.array,
+RecentActivity.propTypes = {
+  data: PropTypes.array,
   loading: PropTypes.bool.isRequired,
   github: PropTypes.object.isRequired,
   googleAnalytics: PropTypes.object.isRequired,
 };
 
-export default Project;
+export default RecentActivity;

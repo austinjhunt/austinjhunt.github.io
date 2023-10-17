@@ -9,8 +9,8 @@ const Drawings = ({ drawings, loading }) => {
   }
   const renderSkeleton = () => {
     return (
-      <div class="text-center mx-auto px-8">
-        <div class="mt-3 text-base-content text-opacity-60 font-mono">
+      <div className="text-center mx-auto px-8">
+        <div className="mt-3 text-base-content text-opacity-60 font-mono">
           No art fetched yet.
         </div>
       </div>

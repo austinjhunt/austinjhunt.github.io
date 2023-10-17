@@ -28,6 +28,7 @@ import PropTypes from 'prop-types';
 import '../assets/index.css';
 import { formatDistance } from 'date-fns';
 import ExternalProject from './external-project';
+import RecentActivity from './recent-activity';
 
 const bgColor = 'bg-base-300';
 
@@ -43,6 +44,7 @@ const GitProfile = ({ config }) => {
   const [profile, setProfile] = useState(null);
   const [drawings, setDrawings] = useState([]);
   const [repo, setRepo] = useState(null);
+  const [recentActivity, setRecentActivity] = useState(null);
 
   useEffect(() => {
     if (sanitizedConfig) {
@@ -98,7 +100,6 @@ const GitProfile = ({ config }) => {
           })
           .then((response) => {
             let data = response.data;
-
             setRepo(data.items);
           })
           .catch((error) => {
@@ -107,6 +108,31 @@ const GitProfile = ({ config }) => {
       })
       .catch((error) => {
         handleError(error);
+      })
+      .then(() => {
+        let url = `https://api.github.com/users/${sanitizedConfig.github.username}/events?per_page=15`;
+
+        axios
+          .get(url, {
+            headers: {
+              'Content-Type': 'application/vnd.github.v3+json',
+              Authorization: 'Bearer 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',
+            },
+          })
+          .then((response) => {
+            let data = response.data;
+            console.log(data);
+            let filtered = data.filter(
+              (event) =>
+                sanitizedConfig.github.exclude.projects.indexOf(
+                  event.repo.name.split('/')[1]
+                ) === -1
+            );
+            setRecentActivity(filtered.slice(0, 5));
+          })
+          .catch((error) => {
+            handleError(error);
+          });
       })
       .then(() => {
         axios
@@ -224,6 +250,12 @@ const GitProfile = ({ config }) => {
                         loading={loading}
                         drawings={drawings}
                       ></Drawings>
+                      <RecentActivity
+                        data={recentActivity}
+                        loading={loading}
+                        github={sanitizedConfig.github}
+                        googleAnalytics={sanitizedConfig.googleAnalytics}
+                      />
                       <Project
                         repo={repo}
                         loading={loading}
