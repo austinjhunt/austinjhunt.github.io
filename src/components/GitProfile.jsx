@@ -116,7 +116,7 @@ const GitProfile = ({ config }) => {
           .get(url, {
             headers: {
               'Content-Type': 'application/vnd.github.v3+json',
-              Authorization: 'Bearer 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',
+              Authorization: 'Bearer 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',
             },
           })
           .then((response) => {
