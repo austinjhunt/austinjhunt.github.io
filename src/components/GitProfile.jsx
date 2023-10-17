@@ -121,7 +121,6 @@ const GitProfile = ({ config }) => {
           })
           .then((response) => {
             let data = response.data;
-            console.log(data);
             let filtered = data.filter(
               (event) =>
                 sanitizedConfig.github.exclude.projects.indexOf(
@@ -147,7 +146,7 @@ const GitProfile = ({ config }) => {
           .then((response) => {
             setDrawings(response.data);
           })
-          .catch((error) => console.log(error));
+          .catch((error) => console.error(error));
       })
       .finally(() => {
         setLoading(false);
