@@ -451,7 +451,7 @@ const config = {
     {
       name: 'Postman',
       tags: ['testing', 'api', 'rest', 'monitoring'],
-    }, 
+    },
     {
       name: 'Python',
       tags: [
@@ -537,10 +537,7 @@ const config = {
     },
   ],
   skills: {
-    'Currently Learning': [
-      'React',
-      'Ellucian Ethos Integration API',  
-    ],
+    'Currently Learning': ['React', 'Ellucian Ethos Integration API'],
 
     Soft: [
       'Training/Demos',
@@ -727,11 +724,11 @@ const config = {
   // To hide the `My Projects` section, keep it empty.
   externalProjects: [
     {
-      title: 'edukona (startup) - est. Sept 2023',
+      title: 'novabrains.ai (startup) - est. Sept 2023',
       description:
-        'Our startup offers AI-powered digital textbooks with interactive modules for CS courses. We facilitate seamless curriculum integration, affordable learning, and customizable pathways, with ready-to-use content and AI-assisted content creation. Working in collaboration with Dr. Ayman Hajja (amhajja.com)',
-      imageUrl: '',
-      link: 'http://edukona.com',
+        'Startup in stealth mode. Digital textbook platform offering AI-assisted course content management for instructors and active, guided learning for students. Working in collaboration with Dr. Ayman Hajja (amhajja.com)',
+      imageUrl: '/img/projects/novabrains.png',
+      link: 'https://novabrains.ai',
       tech: [
         'Django',
         'Django REST Framework',
@@ -742,16 +739,16 @@ const config = {
         'AWS RDS',
         'AWS R53',
         'Git/GitHub',
-        'GitHub Actions', 
-        'Postgres', 
+        'GitHub Actions',
+        'Postgres',
         'Postman Tests',
-        'Postman Monitors'
+        'Postman Monitors',
       ],
     },
     {
       title: 'Go365 Migrator',
       description:
-        'Multithreaded, configurable migration assistant for migrating files out of Google Drive into SharePoint. Built for College of Charleston\'s enterprise level file migration in light of new Google-enforced storage quotas.',
+        "Multithreaded, configurable migration assistant for migrating files out of Google Drive into SharePoint. Built for College of Charleston's enterprise level file migration in light of new Google-enforced storage quotas.",
       imageUrl: '/img/projects/go365.png',
       link: 'https://www.youtube.com/watch?v=-CzWWTQKGDY',
       tech: [
