@@ -1,4 +1,5 @@
 import axios from 'axios';
+import process from 'process';
 import { Fragment, useCallback, useEffect, useState } from 'react';
 import HeadTagEditor from './head-tag-editor';
 import ErrorPage from './error-page';
@@ -111,12 +112,10 @@ const GitProfile = ({ config }) => {
       })
       .then(() => {
         let url = `https://api.github.com/users/${sanitizedConfig.github.username}/events?per_page=15`;
-
         axios
           .get(url, {
             headers: {
               'Content-Type': 'application/vnd.github.v3+json',
-              Authorization: 'Bearer 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',
             },
           })
           .then((response) => {
