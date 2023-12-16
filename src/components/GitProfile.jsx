@@ -30,6 +30,7 @@ import '../assets/index.css';
 import { formatDistance } from 'date-fns';
 import ExternalProject from './external-project';
 import RecentActivity from './recent-activity';
+import Testimonials from './testimonials';
 
 const bgColor = 'bg-base-300';
 
@@ -248,6 +249,11 @@ const GitProfile = ({ config }) => {
                         loading={loading}
                         drawings={drawings}
                       ></Drawings>
+                    <Testimonials
+                      data={sanitizedConfig.testimonials}
+                      loading={loading}
+                      googleAnalytics={sanitizedConfig.googleAnalytics}
+                    ></Testimonials>
                       <RecentActivity
                         data={recentActivity}
                         loading={loading}

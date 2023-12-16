@@ -14,6 +14,7 @@ const config = {
     token: '52cdcc726dabfbe7356dc273f2f5a238f6d40c10',
     limit: 6,
   },
+
   social: {
     linkedin: 'huntaj',
     twitter: 'austinsketches',
@@ -27,7 +28,43 @@ const config = {
     phone: '',
     email: 'austinsketches@gmail.com',
   },
-
+  testimonials: [
+    {
+      date: 'December 2023',
+      client: 'J. Weston Mize',
+      projectLink: 'https://jerrywestonmize.com',
+      projectDescription:
+        'Highly customized WordPress website for J. Weston Mize, a talented freelance musician and music teacher in Charlotte, NC.',
+      testimonial:
+        "Austin is incredibly knowledgeable, organized, and thorough. As a freelance musician, I don't have the time or bandwidth to fully dive into custom web development. Austin was there for me and provided all the technical support that I needed for building a website. He provided custom code including several plugins to serve the specific needs of my business. The site is changing my music lesson business from here on out for the better and I couldn't be happier with how it looks and functions. I can't recommend him enough!",
+    },
+    {
+      date: 'April 2023',
+      client: 'Anonymous (CofC Cistern Standard Employee Recognition)',
+      projectLink: null,
+      projectDescription: null,
+      testimonial:
+        'When you ask Austin Hunt for help, he jumps right in. While he has created multiple tools for employees so they can easily maneuver through the various IT programs on campus, he is always willing to hop on a call to walk people through the process. I liken Austin to a famous rock star; he graciously and willingly plays the same song over and over again for his adoring audience.',
+    },
+    {
+      date: 'October 2022',
+      client: 'Anonymous (CofC Cistern Standard Employee Recognition)',
+      projectLink: null,
+      projectDescription:
+        'Meeting with and assisting web content managers in building sites with Cascade CMS',
+      testimonial:
+        "Austin is an asset to the College! He should be recognized for our core value of innovation for the way he continuously problem solves with the college's many Cascade CMS users who have varying degrees of comfortability in a system that has many constraints. Cascade requires a lot of creative solutions and Austin is full of them and is super helpful.",
+    },
+    {
+      date: 'September 2022',
+      client: 'Ashley Pagnotta (CofC Cistern Standard Employee Recognition)',
+      projectLink: 'https://github.com/austinjhunt/go365-migrator',
+      projectDescription:
+        'Automated data migration from Google Drive to SharePoint following price changes for higher ed customers',
+      testimonial:
+        "Because of some changes Google made to the pricing of their education offerings, we had to transition from having unlimited Google Drive storage to a fairly small, limited amount. I had a LOT of stuff in my Google Drive, both teaching and research related, and I tried a few different ways to move it over to OneDrive with very little success. After posting about my frustrations on Yammer, Austin jumped in and let me know he (possibly in conjunction with other colleagues?) had built a migration tool that we could use. He got me all set up, and of course my ridiculously large amount of data broke the tool multiple times, but he kept working at it until he was able to get everything migrated from Google Drive to OneDrive. I'm sure it was a huge pain on his end, but I really appreciated it!",
+    },
+  ],
   technology: [
     {
       name: 'AWS EC2',

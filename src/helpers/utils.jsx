@@ -168,6 +168,7 @@ export const sanitizeConfig = (config) => {
       portfolioFileUrl: config?.degree?.portfolioFileUrl || '',
     },
     technology: config?.technology || [],
+    testimonials: config?.testimonials || [],
     skills: config?.skills || { Hard: [], Soft: [], 'Currently Learning': [] },
     externalProjects: config?.externalProjects || [],
     experiences: config?.experiences || [],
