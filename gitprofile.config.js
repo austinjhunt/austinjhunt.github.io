@@ -14,6 +14,9 @@ const config = {
     token: '52cdcc726dabfbe7356dc273f2f5a238f6d40c10',
     limit: 6,
   },
+  buildRequestForm: {
+    apiEndpoint: "https://sketchyactivity.com/expressapi/send-email",
+  },
 
   social: {
     linkedin: 'huntaj',
@@ -26,7 +29,7 @@ const config = {
     website: 'https://austinjhunt.com',
     art: 'https://www.sketchyactivity.com',
     phone: '',
-    email: 'austinsketches@gmail.com',
+    email: 'austincodescleanly@gmail.com',
   },
   testimonials: [
     {

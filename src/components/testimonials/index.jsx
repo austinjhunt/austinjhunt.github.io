@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { ga, skeleton } from '../../helpers/utils'; 
+import { ga, skeleton } from '../../helpers/utils';
 import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa';
 
 const Testimonials = ({ data, loading, googleAnalytics }) => {
@@ -92,28 +92,28 @@ const Testimonials = ({ data, loading, googleAnalytics }) => {
               }
             } catch (error) {
               console.error(error);
-            } 
+            }
             window?.open(item.projectLink, '_blank');
-          } 
+          }
         }}
       >
-        <div className="flex justify-between flex-col p-3 h-full w-full"> 
-            <div className="flex items-center" style={{alignSelf: 'start'}}>
-              <div  className='flex mr-3' style={{alignItems: 'flex-start', height: '100%'}}>
+        <div className="flex justify-between flex-col p-3 h-full w-full">
+          <div className="flex items-center" style={{ alignSelf: 'start' }}>
+            <div className='flex mr-3' style={{ alignItems: 'flex-start', height: '100%' }}>
               <FaQuoteLeft></FaQuoteLeft>
-              </div>
-              <div className="text-sm tracking-wide opacity-60">  
-                <p style={{display: 'block', textAlign: 'left'}}>
-                  <em>{item.testimonial}</em>
-                </p> 
-              </div>
-              <div className='flex ml-3' style={{alignSelf: 'end'}}>
-              <FaQuoteRight></FaQuoteRight>
-              </div>
-            </div> 
-            <div>
-            <p style={{display: 'block', textAlign: 'right', marginTop: '1rem'}}>- <span class="font-bold">{item.client}, {item.date}</span></p>
             </div>
+            <div className="text-sm tracking-wide opacity-60">
+              <p style={{ display: 'block', textAlign: 'left' }}>
+                <em>{item.testimonial}</em>
+              </p>
+            </div>
+            <div className='flex ml-3' style={{ alignSelf: 'end' }}>
+              <FaQuoteRight></FaQuoteRight>
+            </div>
+          </div>
+          <div>
+            <p style={{ display: 'block', textAlign: 'right', marginTop: '1rem' }}>- <span className="font-bold">{item.client}, {item.date}</span></p>
+          </div>
         </div>
       </a>
     ));
@@ -139,8 +139,8 @@ const Testimonials = ({ data, loading, googleAnalytics }) => {
                     )}
                   </h5>
                   <span className="ml-auto">
-                    <FaQuoteLeft fontSize={"2em"} style={{display: 'inline-flex', marginRight: '0.5rem'}}/>
-                    <FaQuoteRight fontSize={"2em"}  style={{display: 'inline-flex'}}/>  
+                    <FaQuoteLeft fontSize={"2em"} style={{ display: 'inline-flex', marginRight: '0.5rem' }} />
+                    <FaQuoteRight fontSize={"2em"} style={{ display: 'inline-flex' }} />
                   </span>
                 </div>
                 <div className="col-span-2">

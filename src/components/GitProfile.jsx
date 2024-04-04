@@ -31,6 +31,7 @@ import { formatDistance } from 'date-fns';
 import ExternalProject from './external-project';
 import RecentActivity from './recent-activity';
 import Testimonials from './testimonials';
+import BuildRequestForm from './build-request-form';
 
 const bgColor = 'bg-base-300';
 
@@ -88,9 +89,8 @@ const GitProfile = ({ config }) => {
           excludeRepo += `+-repo:${sanitizedConfig.github.username}/${project}`;
         });
 
-        let query = `user:${
-          sanitizedConfig.github.username
-        }+fork:${!sanitizedConfig.github.exclude.forks}${excludeRepo}`;
+        let query = `user:${sanitizedConfig.github.username
+          }+fork:${!sanitizedConfig.github.exclude.forks}${excludeRepo}`;
 
         let url = `https://api.github.com/search/repositories?q=${query}&sort=${sanitizedConfig.github.sortBy}&per_page=${sanitizedConfig.github.limit}&type=Repositories`;
 
@@ -249,11 +249,16 @@ const GitProfile = ({ config }) => {
                         loading={loading}
                         drawings={drawings}
                       ></Drawings>
-                    <Testimonials
-                      data={sanitizedConfig.testimonials}
-                      loading={loading}
-                      googleAnalytics={sanitizedConfig.googleAnalytics}
-                    ></Testimonials>
+                      <BuildRequestForm
+                        apiEndpoint={sanitizedConfig.buildRequestForm.apiEndpoint}
+                        loading={loading}
+                        googleAnalytics={sanitizedConfig.googleAnalytics}
+                      ></BuildRequestForm>
+                      <Testimonials
+                        data={sanitizedConfig.testimonials}
+                        loading={loading}
+                        googleAnalytics={sanitizedConfig.googleAnalytics}
+                      ></Testimonials>
                       <RecentActivity
                         data={recentActivity}
                         loading={loading}
