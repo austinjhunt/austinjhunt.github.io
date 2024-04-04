@@ -12,7 +12,8 @@ const ErrorMessage = () => {
                                 <h5 className="card-title">
                                     <span className="text-base-content opacity-70">
                                         Aw man! There was an error sending your message. Please try again later. OR you can email me at{" "}
-                                        <a href="mailto:austincodescleanly@gmail.com" className="text-primary">austincodescleanly@gmail.com</a>
+                                        <a href="mailto:austincodescleanly@gmail.com" className="text-primary">austincodescleanly@gmail.com</a> (for development requests) or
+                                        <a href="mailto:austinsketches@gmail.com" className="text-primary">austinsketches@gmail.com</a> (for art requests).
                                     </span>
                                 </h5>
                                 <span className="ml-auto">

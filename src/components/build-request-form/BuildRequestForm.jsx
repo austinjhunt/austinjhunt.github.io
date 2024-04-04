@@ -18,6 +18,7 @@ const BuildRequestForm = ({ sendEmailEndpoint, verifyCaptchaEndpoint, loading, g
   } else if (messageSendStatus && messageSendStatus === 'error') {
     return <ErrorMessage />;
   } else if (messageSendStatus === null) {
+
     return <Form
       sendEmailEndpoint={sendEmailEndpoint}
       verifyCaptchaEndpoint={verifyCaptchaEndpoint}

@@ -19,6 +19,8 @@ const Form = ({
     const [name, setName] = useState('');
     const [captchaVal, setCaptchaVal] = useState(null);
     const [captchaVerified, setCaptchaVerified] = useState(false);
+    // alternative: drawing
+    const [requestType, setRequestType] = useState('development');
 
     useEffect(() => {
         if (captchaVal === null) {
@@ -56,6 +58,7 @@ const Form = ({
             projectDescription: projectDescription,
             email: email,
             name: name,
+            recipient: requestType === 'development' ? 'austincodescleanly@gmail.com' : 'austinsketches@gmail.com'
         }).then(sendEmailData => {
             console.log(sendEmailData);
             setMessageSendStatus('success');
@@ -81,7 +84,7 @@ const Form = ({
                                         ) : (
                                             <>
                                                 <span className="text-base-content opacity-70">
-                                                    Can I Build Something For You?
+                                                    What can I do for you?
                                                 </span>
                                             </>
                                         )}
@@ -91,6 +94,38 @@ const Form = ({
                                     </span>
                                 </div>
                                 <form onSubmit={handleSubmit}>
+                                    <div className="col-span-2 mb-5">
+                                        <div className="form-control">
+                                            <label className="label">
+                                                <span className="label-text">
+                                                    Please select the type of project I can help you with.
+                                                </span>
+                                            </label>
+                                            <div className="flex flex-row w-100">
+                                                <button
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        setRequestType('drawing');
+                                                    }}
+                                                    type='button'
+                                                    className={`m-1 text-sm justify-center inline-flex items-center font-bold uppercase px-3 py-3 rounded-full w-1/2 ${requestType === "drawing" ? "badge-secondary" : "bg-slate-800 text-gray-600 ring-1 ring-inset ring-gray-500/10"}`}
+                                                >
+                                                    Drawing
+                                                </button>
+                                                <button
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        setRequestType('development');
+                                                    }}
+                                                    type='button'
+                                                    className={`m-1 text-sm justify-center inline-flex items-center font-bold uppercase px-3 py-3 rounded-full w-1/2  ${requestType === "development" ? "badge-secondary" : "bg-slate-800 text-gray-600 ring-1 ring-inset ring-gray-500/10"}`}
+                                                >
+                                                    Software or Web Development
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <div className="col-span-2">
                                         <div className="grid grid-cols-1 gap-6">
                                             <div className="col-span-1">
@@ -98,11 +133,13 @@ const Form = ({
                                                 <div className="form-control">
                                                     <label className="label">
                                                         <span className="label-text">
-                                                            What can I build for you?
+                                                            What can I {requestType === 'development' ? 'build' : 'draw'} for you?
                                                         </span>
                                                     </label>
                                                     <textarea
-                                                        placeholder="I'd like to build..."
+                                                        placeholder={
+                                                            requestType === 'development' ? 'I need to build a website that does X, Y, and Z.' : 'I want a realistic ballpoint drawing of my parents'
+                                                        }
                                                         value={projectDescription}
                                                         onChange={(e) => {
                                                             setProjectDescription(e.target.value);
@@ -169,8 +206,8 @@ const Form = ({
                         </div>
                     </div>
                 </div>
-            </div>
-        </Fragment>
+            </div >
+        </Fragment >
     );
 }
 

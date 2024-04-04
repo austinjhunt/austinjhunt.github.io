@@ -12,7 +12,7 @@ export const verifyCaptcha = async ({ token, verifyCaptchaEndpoint }) => {
     return response.json();
 };
 
-export const sendEmail = async ({ sendEmailEndpoint, projectDescription, email, name }) => {
+export const sendEmail = async ({ sendEmailEndpoint, projectDescription, email, name, recipient }) => {
     const response = await fetch(sendEmailEndpoint, {
         method: 'POST',
         headers: {
@@ -23,7 +23,7 @@ export const sendEmail = async ({ sendEmailEndpoint, projectDescription, email, 
             body: projectDescription,
             from_email: email,
             from_name: name,
-            recipient: 'austincodescleanly@gmail.com'
+            recipient: recipient
         }),
     });
     return response.json();
