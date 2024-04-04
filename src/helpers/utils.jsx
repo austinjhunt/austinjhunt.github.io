@@ -161,7 +161,8 @@ export const sanitizeConfig = (config) => {
       fileUrl: config?.resume?.fileUrl || '',
     },
     buildRequestForm: {
-      apiEndpoint: config?.buildRequestForm?.apiEndpoint || '',
+      sendEmailEndpoint: config?.buildRequestForm?.sendEmailEndpoint || '',
+      verifyCaptchaEndpoint: config?.buildRequestForm?.verifyCaptchaEndpoint || '',
     },
     degree: {
       name: config?.degree?.name || '',

@@ -1,5 +1,4 @@
 import axios from 'axios';
-import process from 'process';
 import { Fragment, useCallback, useEffect, useState } from 'react';
 import HeadTagEditor from './head-tag-editor';
 import ErrorPage from './error-page';
@@ -250,7 +249,8 @@ const GitProfile = ({ config }) => {
                         drawings={drawings}
                       ></Drawings>
                       <BuildRequestForm
-                        apiEndpoint={sanitizedConfig.buildRequestForm.apiEndpoint}
+                        verifyCaptchaEndpoint={sanitizedConfig.buildRequestForm.verifyCaptchaEndpoint}
+                        sendEmailEndpoint={sanitizedConfig.buildRequestForm.sendEmailEndpoint}
                         loading={loading}
                         googleAnalytics={sanitizedConfig.googleAnalytics}
                       ></BuildRequestForm>

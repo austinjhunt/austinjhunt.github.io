@@ -15,7 +15,8 @@ const config = {
     limit: 6,
   },
   buildRequestForm: {
-    apiEndpoint: "https://sketchyactivity.com/expressapi/send-email",
+    sendEmailEndpoint: process.env.NODE_ENV === "production" ? "https://sketchyactivity.com/expressapi/send-email" : "http://localhost:3001/send-email",
+    verifyCaptchaEndpoint: process.env.NODE_ENV === "production" ? "https://sketchyactivity.com/expressapi/verify-captcha" : "http://localhost:3001/verify-recaptcha"
   },
 
   social: {
