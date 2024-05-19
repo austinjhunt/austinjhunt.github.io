@@ -11,7 +11,6 @@ import Certification from './certification';
 import Education from './education';
 import Project from './project';
 import Blog from './blog';
-import Drawings from './drawings';
 import Footer from './footer';
 import Technology from './tech';
 import {
@@ -30,7 +29,6 @@ import { formatDistance } from 'date-fns';
 import ExternalProject from './external-project';
 import RecentActivity from './recent-activity';
 import Testimonials from './testimonials';
-import BuildRequestForm from './build-request-form';
 
 const bgColor = 'bg-base-300';
 
@@ -44,7 +42,6 @@ const GitProfile = ({ config }) => {
   const [theme, setTheme] = useState(null);
   const [loading, setLoading] = useState(true);
   const [profile, setProfile] = useState(null);
-  const [drawings, setDrawings] = useState([]);
   const [repo, setRepo] = useState(null);
   const [recentActivity, setRecentActivity] = useState(null);
 
@@ -88,8 +85,9 @@ const GitProfile = ({ config }) => {
           excludeRepo += `+-repo:${sanitizedConfig.github.username}/${project}`;
         });
 
-        let query = `user:${sanitizedConfig.github.username
-          }+fork:${!sanitizedConfig.github.exclude.forks}${excludeRepo}`;
+        let query = `user:${
+          sanitizedConfig.github.username
+        }+fork:${!sanitizedConfig.github.exclude.forks}${excludeRepo}`;
 
         let url = `https://api.github.com/search/repositories?q=${query}&sort=${sanitizedConfig.github.sortBy}&per_page=${sanitizedConfig.github.limit}&type=Repositories`;
 
@@ -131,21 +129,6 @@ const GitProfile = ({ config }) => {
           .catch((error) => {
             handleError(error);
           });
-      })
-      .then(() => {
-        axios
-          .get(
-            `https://www.sketchyactivity.com/api/portfolio?limit=${config.sketchyactivity.limit}`,
-            {
-              headers: {
-                Authorization: `Token ${config.sketchyactivity.token}`,
-              },
-            }
-          )
-          .then((response) => {
-            setDrawings(response.data);
-          })
-          .catch((error) => console.error(error));
       })
       .finally(() => {
         setLoading(false);
@@ -244,16 +227,6 @@ const GitProfile = ({ config }) => {
                   </div>
                   <div className="lg:col-span-2 col-span-1">
                     <div className="grid grid-cols-1 gap-6">
-                      <Drawings
-                        loading={loading}
-                        drawings={drawings}
-                      ></Drawings>
-                      <BuildRequestForm
-                        verifyCaptchaEndpoint={sanitizedConfig.buildRequestForm.verifyCaptchaEndpoint}
-                        sendEmailEndpoint={sanitizedConfig.buildRequestForm.sendEmailEndpoint}
-                        loading={loading}
-                        googleAnalytics={sanitizedConfig.googleAnalytics}
-                      ></BuildRequestForm>
                       <Testimonials
                         data={sanitizedConfig.testimonials}
                         loading={loading}

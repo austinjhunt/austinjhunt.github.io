@@ -35,8 +35,9 @@ export const skeleton = ({
 }) => {
   return (
     <div
-      className={`bg-base-300 animate-pulse ${shape}${className ? ` ${className}` : ''
-        }${width ? ` ${width}` : ''}${height ? ` ${height}` : ''}`}
+      className={`bg-base-300 animate-pulse ${shape}${
+        className ? ` ${className}` : ''
+      }${width ? ` ${width}` : ''}${height ? ` ${height}` : ''}`}
       style={style}
     />
   );
@@ -159,10 +160,6 @@ export const sanitizeConfig = (config) => {
     },
     resume: {
       fileUrl: config?.resume?.fileUrl || '',
-    },
-    buildRequestForm: {
-      sendEmailEndpoint: config?.buildRequestForm?.sendEmailEndpoint || '',
-      verifyCaptchaEndpoint: config?.buildRequestForm?.verifyCaptchaEndpoint || '',
     },
     degree: {
       name: config?.degree?.name || '',

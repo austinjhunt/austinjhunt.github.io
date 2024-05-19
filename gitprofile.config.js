@@ -10,15 +10,6 @@ const config = {
       projects: ['austinjhunt.github.io', 'austinjhunt'], // These projects will not be displayed. example: ['my-project1', 'my-project2']
     },
   },
-  sketchyactivity: {
-    token: '52cdcc726dabfbe7356dc273f2f5a238f6d40c10',
-    limit: 6,
-  },
-  buildRequestForm: {
-    sendEmailEndpoint: process.env.NODE_ENV === "production" ? "https://sketchyactivity.com/expressapi/send-email" : "http://localhost:3001/send-email",
-    verifyCaptchaEndpoint: process.env.NODE_ENV === "production" ? "https://sketchyactivity.com/expressapi/verify-captcha" : "http://localhost:3001/verify-recaptcha"
-  },
-
   social: {
     linkedin: 'huntaj',
     twitter: 'austinsketches',
