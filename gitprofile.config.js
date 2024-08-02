@@ -758,7 +758,7 @@ const config = {
     {
       title: 'novabrains.ai (startup) - est. Sept 2023',
       description:
-        'Startup in stealth mode. Digital textbook platform offering AI-assisted course content management for instructors and active, guided learning for students. Working in collaboration with Dr. Ayman Hajja (amhajja.com)',
+        'Digital textbook platform in active use by students and instructors at UNC. Offers AI-assisted administrative tools for instructors and AI-driven learning tools (chat, personalized feedback, code analysis) for students. Working in collaboration with Dr. Ayman Hajja (amhajja.com)',
       imageUrl: '/img/projects/novabrains.png',
       link: 'https://novabrains.ai',
       tech: [
