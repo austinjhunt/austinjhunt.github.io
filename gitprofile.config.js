@@ -624,6 +624,12 @@ const config = {
   ],
   certifications: [
     {
+      name: "CKA - Certified Kubernetes Administrator",
+      body: "",
+      year: "Nov 2024",
+      link: "/docs/certs/cka-nov-2024.pdf",
+    },
+    {
       name: "DCA - Docker Certified Associate",
       body: "",
       year: "January 2021",
