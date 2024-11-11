@@ -484,7 +484,12 @@ const config = {
     },
   ],
   skills: {
-    "Currently Learning": ["React", "Ellucian Ethos Integration API"],
+    "Currently Learning": [
+      "Kubernetes",
+      "AWS Certified Solutions Architect - Udemy",
+      "Ellucian Ethos Integration API",
+      "how to be cool",
+    ],
 
     Soft: [
       "Training/Demos",
