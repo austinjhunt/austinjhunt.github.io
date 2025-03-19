@@ -11,14 +11,18 @@ const config = {
     },
   },
   social: {
+    art: "https://sketchyactivity.com",
     linkedin: "huntaj",
     twitter: "austinsketches",
+    youtube: "@austinmakesnoise",
     facebook: "",
     dribbble: "",
     behance: "",
     medium: "austinjhunt",
+    instagram: "sketchyactivity",
     devto: "",
-    website: "https://austinjhunt.com",
+    upwork: "https://www.upwork.com/freelancers/~0140398129a6bb7f8d",
+    website: "",
     art: "https://www.sketchyactivity.com",
     phone: "",
     email: "austincodescleanly@gmail.com",
@@ -28,6 +32,7 @@ const config = {
       date: "December 2023",
       client: "J. Weston Mize",
       projectLink: "https://jerrywestonmize.com",
+      category: "Solving business problems with agile web dev",
       projectDescription:
         "Highly customized WordPress website for J. Weston Mize, a talented freelance musician and music teacher in Charlotte, NC.",
       testimonial:
@@ -37,6 +42,7 @@ const config = {
       date: "April 2023",
       client: "Anonymous (CofC Cistern Standard Employee Recognition)",
       projectLink: null,
+      category: "Top notch technical support and training",
       projectDescription: null,
       testimonial:
         "When you ask Austin Hunt for help, he jumps right in. While he has created multiple tools for employees so they can easily maneuver through the various IT programs on campus, he is always willing to hop on a call to walk people through the process. I liken Austin to a famous rock star; he graciously and willingly plays the same song over and over again for his adoring audience.",
@@ -46,6 +52,7 @@ const config = {
       client: "Anonymous (CofC Cistern Standard Employee Recognition)",
       projectLink: null,
       projectDescription: "Meeting with and assisting web content managers in building sites with Cascade CMS",
+      category: "Solving technical problems with innovative solutions",
       testimonial:
         "Austin is an asset to the College! He should be recognized for our core value of innovation for the way he continuously problem solves with the college's many Cascade CMS users who have varying degrees of comfortability in a system that has many constraints. Cascade requires a lot of creative solutions and Austin is full of them and is super helpful.",
     },
@@ -55,8 +62,9 @@ const config = {
       projectLink: "https://github.com/austinjhunt/go365-migrator",
       projectDescription:
         "Automated data migration from Google Drive to SharePoint following price changes for higher ed customers",
+      category: "Automating time-consuming business processes",
       testimonial:
-        "Because of some changes Google made to the pricing of their education offerings, we had to transition from having unlimited Google Drive storage to a fairly small, limited amount. I had a LOT of stuff in my Google Drive, both teaching and research related, and I tried a few different ways to move it over to OneDrive with very little success. After posting about my frustrations on Yammer, Austin jumped in and let me know he (possibly in conjunction with other colleagues?) had built a migration tool that we could use. He got me all set up, and of course my ridiculously large amount of data broke the tool multiple times, but he kept working at it until he was able to get everything migrated from Google Drive to OneDrive. I'm sure it was a huge pain on his end, but I really appreciated it!",
+        "Because of some changes Google made to the pricing of their education offerings, we had to transition from having unlimited Google Drive storage to a fairly small, limited amount. I had a LOT of stuff in my Google Drive, both teaching and research related, and I tried a few different ways to move it over to OneDrive with very little success. After posting about my frustrations on Yammer, Austin jumped in and let me know he had built a migration tool that we could use. He got me all set up, and of course my ridiculously large amount of data broke the tool multiple times, but he kept working at it until he was able to get everything migrated from Google Drive to OneDrive. I'm sure it was a huge pain on his end, but I really appreciated it!",
     },
   ],
   technology: [
@@ -596,7 +604,7 @@ const config = {
   },
 
   resume: {
-    fileUrl: "/docs/austinjhunt-resume-2025.pdf", // Empty fileUrl will hide the `Download Resume` button.
+    fileUrl: "/docs/austinjhunt-2025-resume.pdf", // Empty fileUrl will hide the `Download Resume` button.
   },
   degree: {
     portfolioFileUrl: "/docs/vanderbilt/ms-portfolio.pdf",
@@ -610,21 +618,42 @@ const config = {
       position: "Digital Communications Developer",
       from: "February 2022",
       to: "Present",
-      companyLink: "https://cofc.edu",
+      companyLink: "https://charleston.edu",
     },
     {
       company: "College of Charleston",
       position: "Webmaster",
       from: "December 2019",
       to: "February 2022",
-      companyLink: "https://cofc.edu",
+      companyLink: "https://charleston.edu",
     },
     {
       company: "College of Charleston",
       position: "Temporary Employee - Web Team",
       from: "May 2019",
       to: "December 2019",
-      companyLink: "https://cofc.edu",
+      companyLink: "https://charleston.edu",
+    },
+    {
+      company: "College of Charleston",
+      position: "Student Network Engineer",
+      from: "October 2017",
+      to: "May 2019",
+      companyLink: "https://charleston.edu",
+    },
+    {
+      company: "Upwork",
+      position: "Freelance Development",
+      from: "June 2023",
+      to: "Present",
+      companyLink: "https://upwork.com",
+    },
+    {
+      company: "Austin Hunt Portraiture",
+      position: "Freelance Artist",
+      from: "circa 2015",
+      to: "Present",
+      companyLink: "https://sketchyactivity.com",
     },
   ],
   certifications: [
