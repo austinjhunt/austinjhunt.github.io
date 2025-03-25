@@ -604,7 +604,7 @@ const config = {
   },
 
   resume: {
-    fileUrl: "/docs/austinjhunt-2025-resume.pdf", // Empty fileUrl will hide the `Download Resume` button.
+    fileUrl: "/docs/ajh2025resume.pdf", // Empty fileUrl will hide the `Download Resume` button.
   },
   degree: {
     portfolioFileUrl: "/docs/vanderbilt/ms-portfolio.pdf",
