@@ -135,6 +135,7 @@ export const sanitizeConfig = (config) => {
         projects: config?.github?.exclude?.projects || [],
       },
     },
+    freelanceServices: config?.freelanceServices,
     social: {
       linkedin: config?.social?.linkedin,
       twitter: config?.social?.twitter,

@@ -29,6 +29,7 @@ import { formatDistance } from "date-fns";
 import ExternalProject from "./external-project";
 import RecentActivity from "./recent-activity";
 import Testimonials from "./testimonials";
+import FreelanceServices from "./freelanceServices";
 
 const bgColor = "bg-base-300";
 
@@ -165,6 +166,13 @@ const GitProfile = ({ config }) => {
               <div className={`p-4 lg:p-10 min-h-full ${bgColor}`}>
                 <div className="grid grid-cols-1  gap-6 rounded-box">
                   <div className="col-span-1 grid grid-cols-1 mb-6 gap-6">
+                    <AvatarCard
+                      profile={profile}
+                      loading={loading}
+                      avatarRing={!sanitizedConfig.themeConfig.hideAvatarRing}
+                      resume={sanitizedConfig.resume}
+                      degree={sanitizedConfig.degree}
+                    />
                     {!sanitizedConfig.themeConfig.disableSwitch && (
                       <ThemeChanger
                         theme={theme}
@@ -173,13 +181,6 @@ const GitProfile = ({ config }) => {
                         themeConfig={sanitizedConfig.themeConfig}
                       />
                     )}
-                    <AvatarCard
-                      profile={profile}
-                      loading={loading}
-                      avatarRing={!sanitizedConfig.themeConfig.hideAvatarRing}
-                      resume={sanitizedConfig.resume}
-                      degree={sanitizedConfig.degree}
-                    />
                   </div>
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 rounded-box">
@@ -200,6 +201,7 @@ const GitProfile = ({ config }) => {
                   </div>
                   <div className="lg:col-span-2 col-span-1">
                     <div className="grid grid-cols-1 gap-6">
+                      <FreelanceServices data={sanitizedConfig.freelanceServices} loading={loading}></FreelanceServices>
                       <Testimonials
                         data={sanitizedConfig.testimonials}
                         loading={loading}

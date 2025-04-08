@@ -10,6 +10,33 @@ const config = {
       projects: ["austinjhunt.github.io", "austinjhunt"], // These projects will not be displayed. example: ['my-project1', 'my-project2']
     },
   },
+  freelanceServices: [
+    {
+      title: "LLM integrations & RAG Pipelines",
+      summary:
+        "AI integrations for applications, and architecting Retrieval Augmented Generation (RAG) pipelines for AI-driven chat bots, search services, content summarization, etc.",
+    },
+    {
+      title: "Frontend Web Development",
+      summary:
+        "Building, troubleshooting, or optimizing an existing frontend web app across React, Django, PHP, HTML/JS/CSS, TypeScript, Sass. I've learned from many mistakes and am familiar with common pitfalls in front end development. Priority on accessibility, performance, and responsiveness.",
+    },
+    {
+      title: "Backend Web Development",
+      summary:
+        "Building, troubleshooting, or optimizing a backend application. Assistance with NodeJS, Express, Flask, PHP/LAMP, Django/DRF, relational and non-relational database integrations.",
+    },
+    {
+      title: "Cloud Platform Support",
+      summary:
+        "Support for building services in or migrating services to your cloud environment (AWS, Azure, GCP) with a focus on least privilege access control, cost minimization, scalability, and CI/CD dev ops pipelines. ",
+    },
+    {
+      title: "WordPress Plugin / Theme Development",
+      summary:
+        "Development of new WordPress plugins to meet business needs or WordPress themes that align your site with an existing design system.",
+    },
+  ],
   social: {
     art: "https://sketchyactivity.com",
     linkedin: "huntaj",
@@ -23,7 +50,6 @@ const config = {
     devto: "",
     upwork: "https://www.upwork.com/freelancers/~0140398129a6bb7f8d",
     website: "",
-    art: "https://www.sketchyactivity.com",
     phone: "",
     email: "austincodescleanly@gmail.com",
   },
@@ -704,7 +730,7 @@ const config = {
     {
       title: "novabrains.ai (startup) - est. Sept 2023",
       description:
-        "Digital textbook platform in active use by students and instructors at UNC. Offers AI-assisted administrative tools for instructors and AI-driven learning tools (chat, personalized feedback, code analysis) for students. Working in collaboration with Dr. Ayman Hajja (amhajja.com)",
+        "Digital textbook platform in active use by students and instructors at UNCC. Offers AI-assisted administrative tools for instructors (quiz generation, content generation) and AI-driven learning tools (chat, personalized feedback, code analysis) for students. Working in collaboration with Dr. Ayman Hajja.",
       imageUrl: "/img/projects/novabrains.png",
       link: "https://novabrains.ai",
       tech: [
