@@ -41,7 +41,7 @@ const config = {
     art: "https://sketchyactivity.com",
     linkedin: "huntaj",
     twitter: "austinsketches",
-    youtube: "@austinmakesnoise",
+    youtube: "",
     facebook: "",
     dribbble: "",
     behance: "",
