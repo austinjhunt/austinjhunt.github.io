@@ -639,11 +639,18 @@ const config = {
     school: "",
   },
   experiences: [
+      {
+      company: "Splunk",
+      position: "Software Engineer (Enterprise Cloud Infrastructure)",
+      from: "June 2025",
+      to: "Present",
+      companyLink: "https://splunk.com",
+    },
     {
       company: "College of Charleston",
       position: "Digital Communications Developer",
       from: "February 2022",
-      to: "Present",
+      to: "June 2025",
       companyLink: "https://charleston.edu",
     },
     {
