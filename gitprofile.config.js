@@ -55,6 +55,16 @@ const config = {
   },
   testimonials: [
     {
+      date: "September 2024",
+      client: "Luke, Freelance Client on Upwork",
+      projectLink: "https://www.upwork.com/freelancers/~0140398129a6bb7f8d",
+      category: "Technical troubleshooting and consulting",
+      projectDescription:
+        "Aiding in the troubleshooting and development of containerized hosting of a Vue & Laravel web application for a UK client",
+      testimonial:
+        "Austin was incredibly helpful and patient when working with me. He guided me through any issues I had and was very reliable to work with.",
+    },,
+    {
       date: "December 2023",
       client: "J. Weston Mize",
       projectLink: "https://jerrywestonmize.com",
