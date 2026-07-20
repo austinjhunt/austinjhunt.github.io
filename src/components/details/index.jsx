@@ -148,7 +148,7 @@ const Details = ({ profile, loading, social, github }) => {
               {social?.instagram && (
                 <ListItem
                   icon={<AiFillInstagram className="mr-2" />}
-                  title="Instantaneous graham::"
+                  title="IG::"
                   value={"@" + social.instagram}
                   link={`https://www.instagram.com/${social.instagram}`}
                 />
