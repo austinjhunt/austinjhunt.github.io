@@ -168,7 +168,7 @@
     <h1>Snap n' Sell Privacy Policy</h1>
   </header>
   <p class="lede">A plain-English summary of what data Snap n' Sell collects, what it does with it, and the controls you have over it.</p>
-  <p class="meta">Last updated: June 17, 2026 (subscriptions added)</p>
+  <p class="meta">Last updated: July 24, 2026 (account deletion &amp; data storage clarified)</p>
 
   <section>
     <h2>The short version</h2>
@@ -219,14 +219,14 @@
           <td>On your device only (SwiftData)</td>
         </tr>
         <tr>
-          <td>Daily usage counter (<code>dailyUsage/&lt;uid&gt;</code>: date + count)</td>
+          <td>Daily usage counter (<code>dailyUsage/&lt;device&gt;</code>: date + count)</td>
           <td>Enforces your plan's daily listing limit (3/day on Free, higher on paid plans) to keep AI costs manageable.</td>
-          <td>Firebase Firestore (Google Cloud)</td>
+          <td>Firebase Firestore (Google Cloud). Keyed to your device, not your account, and holds nothing that identifies you — just a date and a number.</td>
         </tr>
         <tr>
-          <td>Subscription receipt (managed by Apple)</td>
-          <td>Lets the app know your active plan so we can apply the correct daily listing limit.</td>
-          <td>Apple's servers. The app only checks the receipt locally via StoreKit — we never store your billing details. See Section 4.</td>
+          <td>Subscription status &amp; plan record (product/tier, Apple transaction identifiers, expiry)</td>
+          <td>Your signed App Store transaction is verified on our server to confirm your active plan and apply the correct daily listing limit.</td>
+          <td>Firebase Firestore (Google Cloud), in your account record (<code>users/&lt;uid&gt;</code>). We store the plan tier and Apple's transaction identifiers — never your payment method, card number, or billing address, which stay with Apple. See Section 4.</td>
         </tr>
         <tr>
           <td>App Attest device attestation token</td>
@@ -255,7 +255,7 @@
       <li><strong>Sign in with Apple</strong> — when you choose this sign-in option. <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple Privacy</a></li>
       <li><strong>Google Sign-In</strong> — when you choose this sign-in option. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy</a></li>
       <li><strong>Firebase AI Logic + Google Gemini (via Vertex AI)</strong> — generates the listing from your photo. Photos are transmitted to Google for inference. According to <a href="https://cloud.google.com/vertex-ai/docs/generative-ai/data-governance" target="_blank" rel="noopener">Google's Vertex AI data governance</a>, prompt content is not used to train Google models and is not retained for ongoing access.</li>
-      <li><strong>Firebase Firestore</strong> — stores only your daily usage counter document keyed by your account ID.</li>
+      <li><strong>Firebase Firestore</strong> — stores your account record (<code>users/&lt;uid&gt;</code>: plan tier and Apple subscription identifiers) and a daily usage counter keyed to your device (<code>dailyUsage/&lt;device&gt;</code>: date + count).</li>
       <li><strong>Firebase App Check (App Attest)</strong> — verifies your app installation is genuine.</li>
       <li><strong>Apple StoreKit / App Store</strong> — handles purchases and renewals for our subscription plans (Plus, Pro, Max). Apple processes payments and gives the app a receipt confirming your active plan. We do not see or store your payment method, billing address, or other Apple account details. <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple Privacy</a></li>
     </ul>
@@ -266,15 +266,16 @@
     <h3>What stays on your device</h3>
     <p>Your listings and their photos live only on your iPhone. Sign out doesn't delete them. They sync across your devices only if you've enabled iCloud backup at the system level.</p>
     <h3>What stays in the cloud</h3>
-    <p>Your authentication record (email, display name, UID) and your <code>dailyUsage/&lt;uid&gt;</code> document persist in Google Cloud until you delete your account. Your subscription record is held by Apple, not by us.</p>
+    <p>Your authentication record (email, display name, UID) sits in Firebase Authentication, and your account record (<code>users/&lt;uid&gt;</code>: plan tier and Apple subscription identifiers) sits in Firestore. Both persist until you delete your account. A daily usage counter keyed to your device (<code>dailyUsage/&lt;device&gt;</code>: date + count) also persists — see the note under "Deleting your account." Your subscription itself is held by Apple; we store only the identifiers needed to confirm your plan.</p>
     <h3>Deleting your account</h3>
     <p>Open the app, go to the <strong>Me</strong> tab, and tap <strong>Delete Account</strong>. This will:</p>
     <ul>
-      <li>Delete your Firebase Authentication record.</li>
-      <li>Delete your <code>dailyUsage/&lt;uid&gt;</code> document from Firestore.</li>
-      <li>Delete every item in your local "garage" and every photo file the app stored.</li>
+      <li>Delete your Firebase Authentication record (email, display name, UID).</li>
+      <li>Delete your account record (<code>users/&lt;uid&gt;</code>) from Firestore, including your plan tier and stored Apple subscription identifiers.</li>
+      <li>Delete every item in your local "garage" and every photo file the app stored on your device.</li>
     </ul>
-    <p>This action is immediate and irreversible. We cannot recover deleted data. If you have an active subscription, deleting your account in this app does <strong>not</strong> cancel it — manage and cancel subscriptions in <strong>iOS Settings → your Apple ID → Subscriptions</strong>.</p>
+    <p>The device usage counter (<code>dailyUsage/&lt;device&gt;</code>) is <strong>not</strong> deleted. It is keyed to your device rather than your account and cannot be traced back to you — it holds only a date and a number. We retain it so the daily free-listing limit can't be reset simply by deleting and recreating an account, and it is overwritten automatically each day.</p>
+    <p>Account deletion is immediate and irreversible. We cannot recover deleted data. If you have an active subscription, deleting your account in this app does <strong>not</strong> cancel it — manage and cancel subscriptions in <strong>iOS Settings → your Apple ID → Subscriptions</strong>.</p>
   </section>
 
   <section>
@@ -300,7 +301,7 @@
 
   <section>
     <h2>9. Security</h2>
-    <p>All network traffic between the app and our backend services is encrypted in transit using HTTPS/TLS. Access to your Firestore usage document is restricted by Firebase security rules to your own authenticated account.</p>
+    <p>All network traffic between the app and our backend services is encrypted in transit using HTTPS/TLS. Access to data in Firestore is governed by Firebase security rules, and every request to our backend is verified with Firebase App Check and your signed-in credentials.</p>
     <p>That said, no system is perfectly secure. Use strong account credentials and enable two-factor authentication on your Apple or Google account.</p>
   </section>
 
