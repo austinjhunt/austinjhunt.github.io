@@ -59,18 +59,50 @@ export const projects = [
     name: 'Snap-n-Sell',
     tagline: 'Snap a photo → an AI-written marketplace listing',
     description:
-      'Subscription mobile app that turns a product photo into a ready-to-post resale listing using AI. Includes Stripe subscriptions, account lifecycle (deletion, data controls), and a privacy-first data model.',
+      'Native iOS app (SwiftUI) that turns a photo of any item into a ready-to-post marketplace listing using Google Vertex AI, backed by Firebase. Includes subscriptions and full privacy / account-deletion flows.',
     category: 'Product',
-    year: '2025',
+    year: '2026',
     status: 'Live',
     visibility: 'private',
     featured: true,
-    tech: ['AI / Vision', 'Mobile', 'Stripe', 'Subscriptions'],
+    tech: ['SwiftUI', 'iOS', 'Vertex AI', 'Firebase', 'Subscriptions'],
     highlights: [
-      'Photo-to-listing generation with a defined JSON schema',
-      'Full subscription + privacy/account-deletion flows',
+      'Photo-to-listing generation powered by Vertex AI',
+      'Firebase backend with subscription & account-deletion flows',
     ],
     links: { live: '/snap-n-sell/' },
+  },
+  {
+    name: 'RemoteWorkLog',
+    tagline: 'Remote work logging with SSO + AI feedback',
+    description:
+      'Web app for employees and supervisors to manage remote work-log entries. Azure AD SSO auto-sets the supervisor hierarchy on sign-in, email notifications fire on submission, and an OpenAI integration gives AI feedback on each work-log description.',
+    category: 'Web',
+    year: '2025 – present',
+    status: 'Active',
+    visibility: 'private',
+    featured: true,
+    tech: ['Python', 'Azure AD SSO', 'OpenAI API', 'Email'],
+    highlights: [
+      'Azure AD SSO that auto-builds the supervisor hierarchy on login',
+      'AI feedback on entries via OpenAI completions',
+    ],
+    links: {},
+  },
+  {
+    // Newest private repo — no description on GitHub yet; blurb inferred from the
+    // name. TODO(austin): refine this one-liner + tech when ready.
+    name: 'synthgen-pipeline',
+    tagline: 'Synthetic data generation pipeline',
+    description:
+      'A Python pipeline for generating synthetic data — recent private work in progress.',
+    category: 'AI / ML',
+    year: '2026',
+    status: 'In progress',
+    visibility: 'private',
+    featured: false,
+    tech: ['Python'],
+    links: {},
   },
   {
     name: 'NovaBrains',
