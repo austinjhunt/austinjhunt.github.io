@@ -29,8 +29,7 @@ export default function Hero() {
           </h1>
 
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted">
-            {profile.tagline} I build reliable cloud and web systems — and draw
-            realistic portraits when I step away from the keyboard.
+            {profile.tagline} What can I say? I'm single and I like to tinker.
           </p>
 
           {/* focus tags */}

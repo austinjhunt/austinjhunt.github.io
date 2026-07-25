@@ -42,7 +42,7 @@ export const projects = [
     name: 'Enterprise Cloud Infrastructure',
     tagline: 'Reliability & tooling for Splunk Cloud at scale',
     description:
-      'Software engineering on Splunk’s enterprise cloud infrastructure team — building and operating the systems that keep large-scale customer environments healthy. Details are internal; the impact is production-grade reliability.',
+      'Automation, observability, alerting, and config management on Splunk’s ACM team — maintaining and building systems that keep features rolling, keeps the team aware of problems, and keeps large-scale customer environments healthy. Details are internal; the impact is production-grade reliability.',
     category: 'Cloud / Infra',
     year: '2025 – present',
     status: 'In production',
@@ -50,8 +50,10 @@ export const projects = [
     featured: true,
     tech: ['Cloud', 'Distributed Systems', 'Automation', 'Observability'],
     highlights: [
-      'Enterprise-scale, customer-facing cloud infrastructure',
-      'Focus on reliability, automation, and least-privilege security',
+      'Expanding global cohorted alerting infrastructure', 
+      'Adding agentic tooling for incident response, troubleshooting, and self service contributions',
+      'Helping to standardize policy docs based on learnings from higher ed IT',
+      'Focusing on reliability, automation, reusability, least-privilege security',
     ],
     links: { live: 'https://splunk.com' },
   },
@@ -68,7 +70,12 @@ export const projects = [
     tech: ['SwiftUI', 'iOS', 'Vertex AI', 'Firebase', 'Subscriptions'],
     highlights: [
       'Photo-to-listing generation powered by Vertex AI',
+      'Learning the ins & outs of App Store Connect and iOS App Reviews',
+      'Leveraging Claude for implementation of phased feature plans',
       'Firebase backend with subscription & account-deletion flows',
+      'OAuth sign-in support via Google or Apple',
+      'Learning XCode processes for testing, building, validating, distributing',
+      'Learning fastlane to hopefully automate the boring stuff'
     ],
     links: { live: '/snap-n-sell/' },
   },
@@ -76,7 +83,7 @@ export const projects = [
     name: 'RemoteWorkLog',
     tagline: 'Remote work logging with SSO + AI feedback',
     description:
-      'Web app for employees and supervisors to manage remote work-log entries. Azure AD SSO auto-sets the supervisor hierarchy on sign-in, email notifications fire on submission, and an OpenAI integration gives AI feedback on each work-log description.',
+      'Web app for employees and supervisors to manage remote work-log entries, built primarily for CofC but generalized with environmental params to work for other orgs. Azure AD SSO with a Graph API integration auto-sets the supervisor hierarchy on sign-in, email notifications fire on submission, and an OpenAI integration gives AI feedback on each work-log description.',
     category: 'Web',
     year: '2025 – present',
     status: 'Active',

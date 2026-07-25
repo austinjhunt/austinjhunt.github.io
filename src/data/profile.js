@@ -8,14 +8,10 @@ export const profile = {
   location: 'Greenville, SC',
 
   // One-liner tagline (hero).
-  tagline: 'Software engineer by trade, portrait artist by instinct.',
+  tagline: 'T1D SWE(etie) with an artsy heart.',
 
   // Longer positioning paragraph (about section).
-  bio: `I build and operate reliable cloud and web systems — from enterprise
-  infrastructure at Splunk to full-stack products, automation pipelines, and
-  AI integrations. I care about clean code, least-privilege security, and
-  things that actually ship. Outside the terminal I draw realistic portraits,
-  which is where the "artist" half of this shows up.`,
+  bio: ``,
 
   // Availability flag for the freelance / hire-me callout.
   openToFreelance: true,
