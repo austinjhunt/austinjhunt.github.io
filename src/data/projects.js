@@ -100,12 +100,12 @@ export const projects = [
     // Newest private repo — no description on GitHub yet; blurb inferred from the
     // name. TODO(austin): refine this one-liner + tech when ready.
     name: 'synthgen-pipeline',
-    tagline: 'Synthetic data generation pipeline',
+    tagline: 'RunPod + ComfyUI character image/video generation automation framework',
     description:
-      'A Python pipeline for generating synthetic data — recent private work in progress.',
+      'Reusable automation framework for driving a RunPod + ComfyUI character image / video generation pipeline ("workflow") with or without trained LoRA models, with support for persisted network volume data in RunPod',
     category: 'AI / ML',
     year: '2026',
-    status: 'In progress',
+    status: 'Complete',
     visibility: 'private',
     featured: false,
     tech: ['Python'],
