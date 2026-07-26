@@ -23,7 +23,7 @@ export default function About() {
           <p>
             I've grown up though. I know the value of a team, and helping hands received and offered, and{' '}
             <b>persistent, intentional injection</b>{' '}of humanity and humor and real connection into life 
-            and tech work, because tech feels increasingly
+            and tech work, because tech feels increasingly{' '}
             <b>anti-human</b> with each passing year. After 8 years of working and learning in a small IT shop at CofC,
             I just passed my <b>1 year</b> mark working on a small, close-knit team
             of brilliant engineers at <b>Splunk</b>, where we manage a high-traffic Puppet control-repo
