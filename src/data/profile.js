@@ -10,9 +10,6 @@ export const profile = {
   // One-liner tagline (hero).
   tagline: 'T1D SWE(etie) with an artsy heart.',
 
-  // Longer positioning paragraph (about section).
-  bio: ``,
-
   // Availability flag for the freelance / hire-me callout.
   openToFreelance: true,
 
@@ -27,6 +24,25 @@ export const profile = {
     { label: 'M.S. C.S. Degree', url: '/docs/vanderbilt/ms-cs-degree.pdf' },
   ],
 };
+
+// Career start: College of Charleston, Oct 2017.
+const CAREER_START = new Date(2017, 9, 1);
+
+// Whole calendar years elapsed, so the stat below never goes stale.
+function yearsSince(start, now = new Date()) {
+  let years = now.getFullYear() - start.getFullYear();
+  const months = now.getMonth() - start.getMonth();
+  if (months < 0 || (months === 0 && now.getDate() < start.getDate())) years -= 1;
+  return years;
+}
+
+// Headline credentials shown as cards alongside the about copy.
+export const stats = [
+  { value: `${yearsSince(CAREER_START)}+`, label: 'yrs building software' },
+  { value: 'M.S.', label: 'CS, Vanderbilt (4.0)' },
+  { value: 'CKA', label: 'K8s certified' },
+  { value: '10+', label: 'shipped products' },
+];
 
 // Ordered for the nav / contact rail. `primary: true` surfaces in the hero.
 export const socials = [
