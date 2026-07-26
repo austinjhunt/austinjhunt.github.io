@@ -14,17 +14,27 @@ export default function About() {
       <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr]">
         <div className="reveal space-y-5 text-lg leading-relaxed text-muted">
           <p>
-            29-year-old engineer with a demonstrated history of perfectionist{' '}
-            tendencies and control problems that manifested in a ton of solo dev projects{' '},
-            a decorated Upwork profile, a quiet personal life of mostly solitude,
-            and an extensive Github repository collection that screams "I'm good enough"{' '}
-            ... mostly into the void, I guess.
+            29-year-old engineer with a demonstrated history of perfectionist
+            tendencies and control problems that manifests in an abundance of solitude
+            and an extensive Github portfolio that screams "I'm good enough, please hire me", mostly into the void,
+            complimented by a potentially undiagnosed bursty attention issue in the form of many unfinished compulsive side projects, usually started after midnight.
+            My real need for a mind-husher, a consistent focal point, fueled thousands of hours of drawing ballpoint portraits that became
+            increasingly realistic as a decade passed. High school, undergrad, work, post-grad, more work. Obsession with "becoming something" pushed me through an M.S. program
+            at Vandy where I maintained a 4.0 while working full time. Brutal workload. Granted, as I danced along
+            that yellow brick road of sleep deprivation, my hands were held warmly by caffeine, friends &amp; family, and a forgiving manager.
           </p>
+          <p>My mom worked at a local law firm when I was growing up (she still does); she brought home some business T-shirts once early on with 
+            their slogan: <b>"Never settle for less."</b> Twenty years later, those shirts still whisper to me. Don't write your name down until you're proud of what you built.
+          </p>
+          <p>My dad was (and is) an electrician, a mechanic, a general jack of all trades, who told me time and again that "if it was easy, everyone would do it." That's baked into me. It's the 
+            unconscious force that raises my hand in the air in quiet rooms and no one else is volunteering when new work shows up. Also, better to volunteer than to be voluntold.
+          </p>
+
           <p>
             I've grown up though. I know the value of a team, and helping hands received and offered, and{' '}
             <b>persistent, intentional injection</b>{' '}of humanity and humor and real connection into life 
             and tech work, because tech feels increasingly{' '}
-            <b>anti-human</b> with each passing year. After 8 years of working and learning in a small IT shop at CofC,
+            <b>anti-human</b> with each passing year and I don't want to contribute to that problem. After 8 years of working and learning in a small IT shop at CofC,
             I just passed my <b>1 year</b> mark working on a small, close-knit team
             of brilliant engineers at <b>Splunk</b>, where we manage a high-traffic Puppet control-repo
             for global config deployments and we share a <b>truly humbling</b> rotation of week-long 24x7 on-call shifts that come 
