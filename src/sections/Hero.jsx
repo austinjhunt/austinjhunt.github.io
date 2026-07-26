@@ -97,7 +97,7 @@ export default function Hero() {
               style={{ background: 'radial-gradient(circle at 50% 35%, rgba(45,212,191,0.14), transparent 65%)' }}
             >
               <img
-                src="/img/profile.svg"
+                src="/img/profile.jpg"
                 alt="Low-poly portrait of Austin Hunt"
                 width="340"
                 height="300"
