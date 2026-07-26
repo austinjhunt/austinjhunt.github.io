@@ -30,7 +30,7 @@ export default function Nav() {
       <nav className="mx-auto flex h-16 max-w-content items-center justify-between px-5 sm:px-8">
         <a href="#top" className="group flex items-center gap-2 font-mono text-sm font-medium">
           <span className="text-accent">~/</span>
-          <span className="text-text">austin</span>
+          <span className="text-text">austinjhunt</span>
           <span className="text-accent cursor-blink">_</span>
         </a>
 
