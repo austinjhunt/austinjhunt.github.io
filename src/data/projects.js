@@ -108,7 +108,7 @@ export const projects = [
     status: 'Complete',
     visibility: 'private',
     featured: false,
-    tech: ['Python'],
+    tech: ['Python', 'RunPod', 'ComfyUI', 'LoRA', 'Stable Diffusion'],
     links: {},
   },
   {
