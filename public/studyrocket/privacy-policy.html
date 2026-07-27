@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy policy — StudyRocket</title>
+    <meta name="description" content="What StudyRocket collects, why, and how to delete it." />
+    <link rel="canonical" href="https://austinjhunt.com/studyrocket/privacy-policy.html" />
+    <link rel="icon" href="assets/favicon.png" />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header class="site">
+      <div class="inner">
+        <img src="assets/logo.png" alt="" />
+        <a class="name" href="index.html" style="color: inherit; text-decoration: none"
+          >StudyRocket</a
+        >
+        <a href="terms-of-service.html">Terms</a>
+        <a href="delete-account.html">Delete account</a>
+      </div>
+    </header>
+
+    <main class="wrap legal">
+      <h1>Privacy policy</h1>
+      <p class="updated">Last updated 27 July 2026</p>
+
+      <p>
+        StudyRocket is operated by Study Rocket, LLC, a South Carolina limited
+        liability company. This policy describes what the StudyRocket mobile app
+        collects, why, who it is shared with, and how to get rid of it.
+      </p>
+
+      <h2>What we collect</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Why</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Email address and display name</td>
+            <td>
+              Supplied by Apple or Google when you sign in. Used to identify
+              your account and show you your own quizzes. We never receive your
+              password.
+            </td>
+          </tr>
+          <tr>
+            <td>Quiz content</td>
+            <td>
+              The topics you type, the Wikipedia articles you choose, and the
+              questions generated for you. Stored so your quizzes are there when
+              you come back.
+            </td>
+          </tr>
+          <tr>
+            <td>Answers to open-ended questions</td>
+            <td>
+              Sent to an AI model for grading, and stored with the score and
+              feedback so you can review them.
+            </td>
+          </tr>
+          <tr>
+            <td>PDF file name and size</td>
+            <td>
+              Recorded so you can recognise which quiz came from which document.
+              <strong>The contents of the PDF are not stored</strong> — see
+              below.
+            </td>
+          </tr>
+          <tr>
+            <td>Usage counts</td>
+            <td>
+              How many quizzes and questions you have generated this month, to
+              enforce your plan's limits.
+            </td>
+          </tr>
+          <tr>
+            <td>A one-way hash of a device identifier</td>
+            <td>
+              Used only to apply fair-use limits per device. See
+              <a href="#device">Device identifiers</a>.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        We do not collect your location, contacts, photos, advertising
+        identifiers, or browsing activity. StudyRocket contains no advertising
+        and no third-party analytics or tracking SDKs.
+      </p>
+
+      <h2>What happens to PDFs you upload</h2>
+      <p>
+        When you generate a quiz from a PDF, the file is sent from your device
+        to our server, and from there to Google's Gemini model so that questions
+        can be written from it. The file is held only for the duration of that
+        request. <strong>We do not store the file, and we do not keep its
+        text.</strong> All we retain afterwards is the file name and its size.
+      </p>
+      <p>
+        Data sent to Gemini is processed by Google Cloud under the
+        <a href="https://cloud.google.com/terms/" rel="noopener">Google Cloud
+        Platform terms</a>. Please do not upload documents containing other
+        people's personal information, or material you are not permitted to
+        share.
+      </p>
+
+      <h2>Who we share data with</h2>
+      <p>
+        We do not sell your data, and we do not share it for advertising. It is
+        shared only with the services needed to run the app:
+      </p>
+      <ul>
+        <li>
+          <strong>Google Firebase</strong> (Authentication, Cloud Firestore,
+          Cloud Functions) — hosts your account and your quizzes.
+        </li>
+        <li>
+          <strong>Google Vertex AI (Gemini)</strong> — receives the topic,
+          article excerpt, or PDF you are generating from, and any open-ended
+          answer being graded.
+        </li>
+        <li>
+          <strong>Apple and Google</strong> — handle sign-in. They tell us your
+          email address and name; we tell them nothing about you.
+        </li>
+      </ul>
+      <p>
+        Wikipedia articles are fetched by our server rather than by your device,
+        so Wikipedia does not receive your IP address or learn what you looked
+        up.
+      </p>
+
+      <h2 id="device">Device identifiers</h2>
+      <p>
+        Generating a quiz costs us money on every request, so the app applies a
+        daily limit per device as well as a monthly limit per account. To do
+        that we take the identifier your operating system gives apps from this
+        publisher —
+        <code>identifierForVendor</code> on iOS,
+        <code>ANDROID_ID</code> on Android — and store a one-way SHA-256 hash of
+        it alongside a date and a count.
+      </p>
+      <p>
+        This record contains nothing else. It is not linked to your account, and
+        it cannot be turned back into the original identifier or traced to you.
+      </p>
+      <p>
+        <strong>It is deliberately not deleted when you delete your
+        account.</strong> If it were, the daily limit could be reset simply by
+        deleting and recreating an account, which would leave the service open
+        to abuse at our expense. The underlying identifier is reset by your
+        operating system when you uninstall the app.
+      </p>
+
+      <h2>How long we keep things</h2>
+      <ul>
+        <li>
+          Your account, quizzes, and answers: until you delete your account.
+        </li>
+        <li>
+          PDF contents: not retained past the request that generated the quiz.
+        </li>
+        <li>
+          Hashed device records: rolling, and reset by uninstalling the app.
+        </li>
+        <li>
+          Server logs: retained by Google Cloud's default retention for
+          operational and abuse-investigation purposes.
+        </li>
+      </ul>
+
+      <h2>Deleting your data</h2>
+      <p>
+        You can delete your account from inside the app at any time —
+        <strong>Account → Delete account</strong>. This permanently removes your
+        profile, every quiz and question you have generated, your answers, your
+        usage history, and any share links you created. It cannot be undone.
+      </p>
+      <p>
+        If you no longer have the app installed, see
+        <a href="delete-account.html">Delete your account</a> for how to request
+        deletion by email.
+      </p>
+
+      <h2>Your rights</h2>
+      <p>
+        Depending on where you live, you may have the right to access, correct,
+        export, or delete your personal data, and to object to its processing.
+        The in-app deletion above satisfies the deletion right immediately. For
+        anything else, email
+        <a href="mailto:austinjhunt@studyrocket.dev">austinjhunt@studyrocket.dev</a>
+        and we will respond within 30 days.
+      </p>
+      <p>
+        We do not sell personal information as that term is defined under the
+        California Consumer Privacy Act.
+      </p>
+
+      <h2>Children</h2>
+      <p>
+        StudyRocket is not directed at children under 13, and we do not
+        knowingly collect their personal information. If you believe a child has
+        created an account, email us and we will delete it.
+      </p>
+
+      <h2>Changes</h2>
+      <p>
+        If this policy changes materially, the date at the top will change and
+        the app will tell you the next time you open it.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Study Rocket, LLC<br />
+        <a href="mailto:austinjhunt@studyrocket.dev">austinjhunt@studyrocket.dev</a>
+      </p>
+    </main>
+
+    <footer class="site">
+      <a href="index.html">Home</a>·
+      <a href="terms-of-service.html">Terms of use</a>·
+      <a href="delete-account.html">Delete your account</a>
+      <p>© 2026 Study Rocket, LLC</p>
+    </footer>
+  </body>
+</html>

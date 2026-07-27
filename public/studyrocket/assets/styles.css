@@ -1,0 +1,270 @@
+/*
+ * StudyRocket site styles.
+ *
+ * One stylesheet for every page. Palette taken from the mobile app's
+ * `client/src/theme.ts`, which in turn came from the original web app, so the
+ * three surfaces read as one brand.
+ *
+ * No build step and no framework: this is served straight off GitHub Pages,
+ * and a static four-page site does not justify a toolchain that can rot.
+ */
+
+:root {
+  --blue: rgb(77, 164, 255);
+  --red: rgb(255, 81, 81);
+  --navy: #0f1b2e;
+
+  --bg: #f7faff;
+  --surface: #ffffff;
+  --border: #dce6f5;
+  --text: #0f1b2e;
+  --text-secondary: #41526b;
+  --text-muted: #6b7a90;
+  --link: #1565c0;
+
+  --radius: 12px;
+  --measure: 68ch;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1b2e;
+    --surface: #16233a;
+    --border: #2a3b58;
+    --text: #eef2f8;
+    --text-secondary: #aebcd0;
+    --text-muted: #8494ab;
+    --link: #8cc5ff;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+}
+
+/* ---- header ---- */
+
+header.site {
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+header.site .inner {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+header.site img {
+  width: 34px;
+  height: 34px;
+}
+
+header.site .name {
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin-right: auto;
+}
+
+header.site a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+header.site a:hover {
+  color: var(--link);
+}
+
+/* ---- hero ---- */
+
+.hero {
+  text-align: center;
+  padding: 3rem 0 1rem;
+}
+
+.hero img {
+  width: min(210px, 55vw);
+  height: auto;
+}
+
+h1 {
+  font-size: clamp(1.9rem, 5vw, 2.6rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 1.25rem 0 0.5rem;
+}
+
+.lede {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  max-width: 46ch;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 1.3rem;
+  letter-spacing: -0.01em;
+  margin: 2.5rem 0 0.75rem;
+}
+
+h3 {
+  font-size: 1.05rem;
+  margin: 1.75rem 0 0.5rem;
+}
+
+a {
+  color: var(--link);
+}
+
+/* ---- cards ---- */
+
+.cards {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  margin: 2.5rem 0;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+}
+
+.card h3 {
+  margin: 0 0 0.35rem;
+}
+
+.card p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.note {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--blue);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin: 1.75rem 0;
+}
+
+.note.warn {
+  border-left-color: var(--red);
+}
+
+.note p:first-child {
+  margin-top: 0;
+}
+
+.note p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---- legal pages ---- */
+
+.legal .updated {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: -0.5rem;
+}
+
+.legal h2 {
+  border-top: 1px solid var(--border);
+  padding-top: 1.75rem;
+}
+
+.legal ul {
+  padding-left: 1.25rem;
+}
+
+.legal li {
+  margin-bottom: 0.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.25rem 0;
+  font-size: 0.95rem;
+  display: block;
+  overflow-x: auto;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+th {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+code {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 0.1em 0.4em;
+  font-size: 0.9em;
+}
+
+/* ---- steps ---- */
+
+ol.steps {
+  padding-left: 1.35rem;
+}
+
+ol.steps li {
+  margin-bottom: 0.9rem;
+}
+
+/* ---- footer ---- */
+
+footer.site {
+  border-top: 1px solid var(--border);
+  margin-top: 3rem;
+  padding: 1.75rem 1.25rem 3rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+footer.site a {
+  color: var(--text-muted);
+  margin: 0 0.5rem;
+}
+
+footer.site a:hover {
+  color: var(--link);
+}
