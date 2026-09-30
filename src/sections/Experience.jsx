@@ -8,8 +8,9 @@ export default function Experience() {
       <ol className="relative border-l border-line pl-6 sm:pl-8">
         {experience.map((e, i) => (
           <li key={i} className="reveal relative pb-9 last:pb-0">
+            {/* Center the 12px dot on the ol's border: shift left by the ol padding + half the dot. */}
             <span
-              className={`absolute -left-[7px] top-1.5 h-3 w-3 rounded-full border-2 border-bg ${
+              className={`absolute -left-[30.5px] top-2 h-3 w-3 sm:-left-[38.5px] rounded-full border-2 border-bg ${
                 e.current ? 'bg-accent accent-glow' : 'bg-faint'
               }`}
             />
