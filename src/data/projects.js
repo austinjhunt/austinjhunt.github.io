@@ -146,6 +146,31 @@ export const projects = [
 
   // ——— Public / open-source ———
   {
+    name: 'Blood Sugar Genie',
+    tagline: 'AI summaries & pattern spotting for Dexcom CGM data',
+    description:
+      'Web app that connects to Dexcom via OAuth (API v3) and turns continuous glucose monitor readings into time-in-range stats, an hourly glucose profile, rule-based pattern detection (e.g. recurring morning lows, post-meal spikes), and plain-language Claude summaries. Informational only, with explicit not-medical-advice disclaimers throughout.',
+    category: 'AI / ML',
+    year: '2026',
+    status: 'Open source',
+    visibility: 'public',
+    featured: true,
+    tech: [
+      'Node.js',
+      'Express',
+      'Dexcom API',
+      'OAuth 2.0',
+      'Claude API',
+      'Chart.js',
+    ],
+    highlights: [
+      'Deterministic stats + pattern rules; the AI only narrates them',
+      'Guardrails against dosing advice; only aggregated stats reach the AI',
+      'Pluggable AI provider: Anthropic API, local Claude Code CLI, or copy-prompt',
+    ],
+    links: { github: 'https://github.com/austinjhunt/bloodsugar-genie' },
+  },
+  {
     name: 'msci_esg',
     tagline: 'Python package for scraping MSCI ESG ratings',
     description:
