@@ -68,31 +68,10 @@ export const socials = [
     primary: true,
   },
   {
-    label: 'Art Portfolio',
-    handle: 'sketchyactivity.com',
-    href: 'https://sketchyactivity.com',
-    icon: 'palette',
-    primary: false,
-  },
-  {
     label: 'Upwork',
     handle: 'Freelance profile',
     href: 'https://www.upwork.com/freelancers/~0140398129a6bb7f8d',
     icon: 'upwork',
-    primary: false,
-  },
-  {
-    label: 'Blog',
-    handle: 'medium/@austinjhunt',
-    href: 'https://medium.com/@austinjhunt',
-    icon: 'medium',
-    primary: false,
-  },
-  {
-    label: 'Instagram',
-    handle: '@talkingtechwithaustin',
-    href: 'https://instagram.com/talkingtechwithaustin',
-    icon: 'instagram',
     primary: false,
   },
 ];

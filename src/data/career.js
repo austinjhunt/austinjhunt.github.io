@@ -42,13 +42,6 @@ export const experience = [
     to: 'Present',
     url: 'https://upwork.com',
   },
-  {
-    company: 'Austin Hunt Portraiture',
-    role: 'Freelance Portrait Artist',
-    from: '~2015',
-    to: 'Present',
-    url: 'https://sketchyactivity.com',
-  },
 ];
 
 export const education = [

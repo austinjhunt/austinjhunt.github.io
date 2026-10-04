@@ -38,15 +38,15 @@ const config = {
     },
   ],
   social: {
-    art: "https://sketchyactivity.com",
+    art: "",
     linkedin: "huntaj",
     twitter: "",
     youtube: "",
     facebook: "",
     dribbble: "",
     behance: "",
-    medium: "austinjhunt",
-    instagram: "talkingtechwithaustin",
+    medium: "",
+    instagram: "",
     devto: "",
     upwork: "https://www.upwork.com/freelancers/~0140398129a6bb7f8d",
     website: "",
@@ -594,27 +594,7 @@ const config = {
           "Jenkins",
         ],
         image: "/img/projects/arxiva.png",
-      },
-      {
-        name: "sketchyactivity",
-        url: "https://www.sketchyactivity.com",
-        description:
-          "Personal portraiture portfolio, built with Django, deployed on Heroku, integrated with Slack for pageview notifications and with AWS S3 for image file storage",
-        github_repo_url: "https://github.com/austinjhunt/sketchyactivity",
-        tech: [
-          "Django",
-          "Git/Github",
-          "Heroku",
-          "AWS S3",
-          "Slack webhooks",
-          "Google Analytics",
-          "JS",
-          "HTML",
-          "Bootstrap",
-          "CSS",
-        ],
-        image: "/img/projects/sketchyactivity.png",
-      },
+      }, 
       {
         name: "PolyDoc - simultaneously manage many documents",
         url: "https://polydoc.herokuapp.com",
@@ -690,13 +670,6 @@ const config = {
       from: "June 2023",
       to: "Present",
       companyLink: "https://upwork.com",
-    },
-    {
-      company: "Austin Hunt Portraiture",
-      position: "Freelance Artist",
-      from: "circa 2015",
-      to: "Present",
-      companyLink: "https://sketchyactivity.com",
     },
   ],
   certifications: [
@@ -883,31 +856,13 @@ const config = {
         "Jenkins",
       ],
     },
-    {
-      title: "sketchyactivity.com",
-      description:
-        "Personal portraiture portfolio, built with Django, deployed with Docker, GitHub Actions, and Linode, and integrated with Slack and AWS S3 for pageview notifications and image file storage",
-      imageUrl: "/img/projects/sketchyactivity.png",
-      link: "https://sketchyactivity.com",
-      tech: [
-        "Django",
-        "Git/Github",
-        "Heroku",
-        "AWS S3",
-        "Slack webhooks",
-        "Google Analytics",
-        "JS",
-        "HTML",
-        "Bootstrap",
-        "CSS",
-      ],
-    },
+    
   ],
   // Display blog posts from your medium or dev account. (Optional)
   blog: {
     // Display blog posts from your medium or dev.to account. (Optional)
-    source: "medium", // medium | dev.to
-    username: "austinjhunt",
+    source: "", // medium | dev.to
+    username: "",
     limit: 5, // How many posts to display. Max is 10.
   },
   googleAnalytics: {

@@ -9,16 +9,7 @@ export default function About() {
     <Section id="about" index="01" label="About" title="can't stop this train">
       <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr]">
         <div className="reveal space-y-5 text-lg leading-relaxed text-muted">
-          <p>
-            29-year-old engineer with a demonstrated history of perfectionist
-            tendencies and control problems that manifests in an abundance of solitude
-            and an extensive Github portfolio that screams "I'm good enough, please hire me", mostly into the void,
-            complemented by a potentially undiagnosed bursty attention issue in the form of many unfinished compulsive side projects, usually started after midnight.
-            My real need for a mind-husher, a consistent focal point, fueled thousands of hours of drawing ballpoint portraits that became
-            increasingly realistic as a decade passed. High school, undergrad, work, post-grad, more work. Obsession with "becoming something" pushed me through an M.S. program
-            at Vandy where I maintained a 4.0 while working full time. Brutal workload. Granted, as I danced along
-            that yellow brick road of sleep deprivation, my hands were held warmly by caffeine, friends &amp; family, and a forgiving manager.
-          </p>
+          
           <p>My mom worked at a local law firm when I was growing up (she still does); she brought home some business T-shirts once early on with 
             their slogan: <strong>"Never settle for less."</strong> Twenty years later, those shirts still whisper to me. Don't write your name down until you're proud of what you built.
           </p>
@@ -27,36 +18,16 @@ export default function About() {
           </p>
 
           <p>
-            I've grown up though. I know the value of a team, and helping hands received and offered, and{' '}
-            <strong>persistent, intentional injection</strong>{' '}of humanity and humor and real connection into life
-            and tech work, because tech feels increasingly{' '}
-            <strong>anti-human</strong> with each passing year and I don't want to contribute to that problem. After 8 years of working and learning in a small IT shop at CofC,
-            I just passed my <strong>1 year</strong> mark working on a small, close-knit team
-            of brilliant engineers at <strong>Splunk</strong>, where we manage a high-traffic Puppet control-repo
-            for global config deployments and we share a <strong>truly humbling</strong> rotation of week-long 24x7 on-call shifts that come
+            After 8 years of working and learning in a small IT shop at CofC (learning the ropes of enterprise network infrastructure, automation, IT communication strategies, and web development),
+            I moved on to a <strong>full-time software engineering role</strong> at <strong>Splunk</strong>, where I work with a small, close-knit team
+            of brilliant engineers to manage and scale a high-traffic Puppet control-repo
+            for global Splunk cloud config deployments. We share a <strong>truly humbling</strong> rotation of week-long 24x7 on-call shifts that come
             with a nice <strong>ego-crushing</strong> helping of after-midnight incident pages.
           </p>
 
           <h3 className="font-bold">~/.outside-the-ropes</h3>
           <p>
-            I love weightlifting, I decorate my own walls at home as a{' '}
-            <a
-              href="https://sketchyactivity.com"
-              target="_blank"
-              rel="noreferrer"
-              className="text-accent link-underline"
-            >
-              portrait artist
-            </a>
-            , I just started a{' '}
-            <a
-              href={channelUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="text-accent link-underline"
-            >
-              tech channel
-            </a> to work on [myself, communication_skills, technical_proficiency, comfort_on_camera, etc.], I just launched{' '}
+            I love weightlifting and working on my Jeep, I decorate my own walls at home as a portrait artist, I enjoy reading (mostly nonfiction, comedy, philosophy), I just launched{' '}
             <a
               href="/snap-n-sell"
               target="_blank"
@@ -64,7 +35,7 @@ export default function About() {
               className="text-accent link-underline"
             >
               my first ever iOS app, Snap n' Sell
-            </a>, and I'm both <strong>excited</strong> and <strong>terrified</strong> by the direction of the tech industry. And I'm right smack-dab in the middle of it. I also doom scroll a lot more than I'm comfortable with.
+            </a>, and I'm both <strong>excited</strong> and <strong>terrified</strong> by the direction of the tech industry. And I'm right smack-dab in the middle of it. I also doom scroll a lot more than I'm comfortable with. FOMO.
           </p>
         </div>
 
@@ -77,22 +48,6 @@ export default function About() {
               </div>
             ))}
           </dl>
-          <a
-            href={channelUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="card card-hover flex items-center justify-between p-5"
-          >
-            <div>
-              <div className="font-mono text-xs uppercase tracking-widest text-accent">
-                figuring out content creation
-              </div>
-              <div className="mt-1 font-display text-lg font-semibold text-text">
-                Talking tech with Austin
-              </div>
-            </div>
-            <Icon name="arrow" className="h-5 w-5 text-muted" />
-          </a>
         </div>
       </div>
     </Section>
